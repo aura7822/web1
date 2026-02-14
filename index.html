@@ -795,24 +795,25 @@
     }
 
     /* ========== FLOATING ACCESSIBILITY BUTTON ========== */
-    .floating-access-btn {
-      position: fixed;
-      left: 30px;
-      bottom: 30px;
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, var(--accent-gold), #e6c456);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-      border: 2px solid rgba(255,255,255,0.2);
-      z-index: 9998;
-      transition: all 0.3s ease;
-    }
-
+   .floating-access-btn {
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent-gold), #e6c456);
+  border-radius: 50%;
+  display: flex !important; /* Force display */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer !important; /* Force cursor */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  border: 2px solid rgba(255,255,255,0.2);
+  z-index: 99999 !important; /* Very high z-index */
+  pointer-events: auto !important; /* Ensure clickable */
+  opacity: 1 !important; /* Ensure visible */
+  visibility: visible !important; /* Ensure visible */
+}
     .floating-access-btn i {
       font-size: 1.8rem;
       color: #1a1a1a;
@@ -1023,6 +1024,42 @@
       min-width: 200px;
     }
 
+/* ========== DIGITAL WATCH TIME DISPLAY ========== */
+
+/* ========== DIGITAL WATCH TIME DISPLAY ========== */
+.digital-time {
+  font-family: 'Orbitron', monospace;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: rgb(235, 151, 8);
+  text-align: center;
+  margin: 20px 0 10px 0;
+  letter-spacing: 5px;
+  text-shadow: 0 0 10px rgba(255, 21, 0, 0.7);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 5px 0;
+  width: 100%;
+}
+/* Optional: Add a subtle flicker animation for authenticity */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+.digital-time {
+  animation: flicker 0.1s infinite;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .digital-time {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+  }
+}
     .systemctl-line {
       text-align: center;
       margin: 80px 0 40px 0;
@@ -1523,25 +1560,96 @@
   </style>
 </head>
 <body class="dark-mode nav-left-active" data-lang="en">
-  <!-- FULL-PAGE FLOATING PARTICLES -->
-  <div class="global-particles">
-    <div class="global-particle" style="left: 5%; top: -10%; animation-delay: 0s;"></div>
-    <div class="global-particle" style="left: 12%; top: -20%; animation-delay: 1s;"></div>
-    <div class="global-particle" style="left: 18%; top: -5%; animation-delay: 2.5s;"></div>
-    <div class="global-particle" style="left: 25%; top: -15%; animation-delay: 0.8s;"></div>
-    <div class="global-particle" style="left: 32%; top: -25%; animation-delay: 3.2s;"></div>
-    <div class="global-particle" style="left: 38%; top: -8%; animation-delay: 1.7s;"></div>
-    <div class="global-particle" style="left: 45%; top: -18%; animation-delay: 0.3s;"></div>
-    <div class="global-particle" style="left: 52%; top: -30%; animation-delay: 2.1s;"></div>
-    <div class="global-particle" style="left: 58%; top: -12%; animation-delay: 1.2s;"></div>
-    <div class="global-particle" style="left: 65%; top: -22%; animation-delay: 3.8s;"></div>
-    <div class="global-particle" style="left: 72%; top: -7%; animation-delay: 0.9s;"></div>
-    <div class="global-particle" style="left: 78%; top: -28%; animation-delay: 2.7s;"></div>
-    <div class="global-particle" style="left: 85%; top: -14%; animation-delay: 1.9s;"></div>
-    <div class="global-particle" style="left: 92%; top: -24%; animation-delay: 0.5s;"></div>
-    <div class="global-particle" style="left: 98%; top: -9%; animation-delay: 3.5s;"></div>
-  </div>
+ <!-- FULL-PAGE FLOATING PARTICLES - ENHANCED DENSITY -->
+<div class="global-particles">
+  <!-- First wave - dense distribution -->
+  <div class="global-particle" style="left: 2%; top: -5%; animation-delay: 0s; width: 6px; height: 6px;"></div>
+  <div class="global-particle" style="left: 7%; top: -15%; animation-delay: 0.3s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 12%; top: -25%; animation-delay: 0.6s; width: 8px; height: 8px;"></div>
+  <div class="global-particle" style="left: 17%; top: -8%; animation-delay: 0.9s; width: 5px; height: 5px;"></div>
+  <div class="global-particle" style="left: 22%; top: -18%; animation-delay: 1.2s; width: 7px; height: 7px;"></div>
+  <div class="global-particle" style="left: 27%; top: -28%; animation-delay: 1.5s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 32%; top: -12%; animation-delay: 1.8s; width: 6px; height: 6px;"></div>
+  <div class="global-particle" style="left: 37%; top: -22%; animation-delay: 2.1s; width: 8px; height: 8px;"></div>
+  <div class="global-particle" style="left: 42%; top: -32%; animation-delay: 2.4s; width: 5px; height: 5px;"></div>
+  <div class="global-particle" style="left: 47%; top: -7%; animation-delay: 2.7s; width: 7px; height: 7px;"></div>
+  <div class="global-particle" style="left: 52%; top: -17%; animation-delay: 3.0s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 57%; top: -27%; animation-delay: 3.3s; width: 6px; height: 6px;"></div>
+  <div class="global-particle" style="left: 62%; top: -9%; animation-delay: 3.6s; width: 8px; height: 8px;"></div>
+  <div class="global-particle" style="left: 67%; top: -19%; animation-delay: 3.9s; width: 5px; height: 5px;"></div>
+  <div class="global-particle" style="left: 72%; top: -29%; animation-delay: 4.2s; width: 7px; height: 7px;"></div>
+  <div class="global-particle" style="left: 77%; top: -11%; animation-delay: 4.5s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 82%; top: -21%; animation-delay: 4.8s; width: 6px; height: 6px;"></div>
+  <div class="global-particle" style="left: 87%; top: -31%; animation-delay: 5.1s; width: 8px; height: 8px;"></div>
+  <div class="global-particle" style="left: 92%; top: -6%; animation-delay: 5.4s; width: 5px; height: 5px;"></div>
+  <div class="global-particle" style="left: 97%; top: -16%; animation-delay: 5.7s; width: 7px; height: 7px;"></div>
 
+  <!-- Second wave - offset positions -->
+  <div class="global-particle" style="left: 4%; top: -35%; animation-delay: 0.2s; width: 5px; height: 5px;"></div>
+  <div class="global-particle" style="left: 9%; top: -45%; animation-delay: 0.5s; width: 7px; height: 7px;"></div>
+  <div class="global-particle" style="left: 14%; top: -55%; animation-delay: 0.8s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 19%; top: -38%; animation-delay: 1.1s; width: 6px; height: 6px;"></div>
+  <div class="global-particle" style="left: 24%; top: -48%; animation-delay: 1.4s; width: 8px; height: 8px;"></div>
+  <div class="global-particle" style="left: 29%; top: -58%; animation-delay: 1.7s; width: 5px; height: 5px;"></div>
+  <div class="global-particle" style="left: 34%; top: -42%; animation-delay: 2.0s; width: 7px; height: 7px;"></div>
+  <div class="global-particle" style="left: 39%; top: -52%; animation-delay: 2.3s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 44%; top: -62%; animation-delay: 2.6s; width: 6px; height: 6px;"></div>
+  <div class="global-particle" style="left: 49%; top: -37%; animation-delay: 2.9s; width: 8px; height: 8px;"></div>
+  <div class="global-particle" style="left: 54%; top: -47%; animation-delay: 3.2s; width: 5px; height: 5px;"></div>
+  <div class="global-particle" style="left: 59%; top: -57%; animation-delay: 3.5s; width: 7px; height: 7px;"></div>
+  <div class="global-particle" style="left: 64%; top: -39%; animation-delay: 3.8s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 69%; top: -49%; animation-delay: 4.1s; width: 6px; height: 6px;"></div>
+  <div class="global-particle" style="left: 74%; top: -59%; animation-delay: 4.4s; width: 8px; height: 8px;"></div>
+  <div class="global-particle" style="left: 79%; top: -41%; animation-delay: 4.7s; width: 5px; height: 5px;"></div>
+  <div class="global-particle" style="left: 84%; top: -51%; animation-delay: 5.0s; width: 7px; height: 7px;"></div>
+  <div class="global-particle" style="left: 89%; top: -61%; animation-delay: 5.3s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 94%; top: -36%; animation-delay: 5.6s; width: 6px; height: 6px;"></div>
+  <div class="global-particle" style="left: 99%; top: -46%; animation-delay: 5.9s; width: 8px; height: 8px;"></div>
+
+  <!-- Third wave - even more particles -->
+  <div class="global-particle" style="left: 1%; top: -70%; animation-delay: 0.1s; width: 9px; height: 9px;"></div>
+  <div class="global-particle" style="left: 6%; top: -80%; animation-delay: 0.4s; width: 3px; height: 3px;"></div>
+  <div class="global-particle" style="left: 11%; top: -90%; animation-delay: 0.7s; width: 6px; height: 6px;"></div>
+  <div class="global-particle" style="left: 16%; top: -73%; animation-delay: 1.0s; width: 8px; height: 8px;"></div>
+  <div class="global-particle" style="left: 21%; top: -83%; animation-delay: 1.3s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 26%; top: -93%; animation-delay: 1.6s; width: 7px; height: 7px;"></div>
+  <div class="global-particle" style="left: 31%; top: -77%; animation-delay: 1.9s; width: 5px; height: 5px;"></div>
+  <div class="global-particle" style="left: 36%; top: -87%; animation-delay: 2.2s; width: 9px; height: 9px;"></div>
+  <div class="global-particle" style="left: 41%; top: -97%; animation-delay: 2.5s; width: 3px; height: 3px;"></div>
+  <div class="global-particle" style="left: 46%; top: -72%; animation-delay: 2.8s; width: 6px; height: 6px;"></div>
+  <div class="global-particle" style="left: 51%; top: -82%; animation-delay: 3.1s; width: 8px; height: 8px;"></div>
+  <div class="global-particle" style="left: 56%; top: -92%; animation-delay: 3.4s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 61%; top: -75%; animation-delay: 3.7s; width: 7px; height: 7px;"></div>
+  <div class="global-particle" style="left: 66%; top: -85%; animation-delay: 4.0s; width: 5px; height: 5px;"></div>
+  <div class="global-particle" style="left: 71%; top: -95%; animation-delay: 4.3s; width: 9px; height: 9px;"></div>
+  <div class="global-particle" style="left: 76%; top: -78%; animation-delay: 4.6s; width: 3px; height: 3px;"></div>
+  <div class="global-particle" style="left: 81%; top: -88%; animation-delay: 4.9s; width: 6px; height: 6px;"></div>
+  <div class="global-particle" style="left: 86%; top: -98%; animation-delay: 5.2s; width: 8px; height: 8px;"></div>
+  <div class="global-particle" style="left: 91%; top: -71%; animation-delay: 5.5s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 96%; top: -81%; animation-delay: 5.8s; width: 7px; height: 7px;"></div>
+
+  <!-- Fourth wave - tiny sparkles -->
+  <div class="global-particle" style="left: 3%; top: -110%; animation-delay: 0.15s; width: 2px; height: 2px;"></div>
+  <div class="global-particle" style="left: 8%; top: -120%; animation-delay: 0.45s; width: 3px; height: 3px;"></div>
+  <div class="global-particle" style="left: 13%; top: -105%; animation-delay: 0.75s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 18%; top: -115%; animation-delay: 1.05s; width: 2px; height: 2px;"></div>
+  <div class="global-particle" style="left: 23%; top: -125%; animation-delay: 1.35s; width: 3px; height: 3px;"></div>
+  <div class="global-particle" style="left: 28%; top: -108%; animation-delay: 1.65s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 33%; top: -118%; animation-delay: 1.95s; width: 2px; height: 2px;"></div>
+  <div class="global-particle" style="left: 38%; top: -128%; animation-delay: 2.25s; width: 3px; height: 3px;"></div>
+  <div class="global-particle" style="left: 43%; top: -112%; animation-delay: 2.55s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 48%; top: -122%; animation-delay: 2.85s; width: 2px; height: 2px;"></div>
+  <div class="global-particle" style="left: 53%; top: -132%; animation-delay: 3.15s; width: 3px; height: 3px;"></div>
+  <div class="global-particle" style="left: 58%; top: -107%; animation-delay: 3.45s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 63%; top: -117%; animation-delay: 3.75s; width: 2px; height: 2px;"></div>
+  <div class="global-particle" style="left: 68%; top: -127%; animation-delay: 4.05s; width: 3px; height: 3px;"></div>
+  <div class="global-particle" style="left: 73%; top: -109%; animation-delay: 4.35s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 78%; top: -119%; animation-delay: 4.65s; width: 2px; height: 2px;"></div>
+  <div class="global-particle" style="left: 83%; top: -129%; animation-delay: 4.95s; width: 3px; height: 3px;"></div>
+  <div class="global-particle" style="left: 88%; top: -113%; animation-delay: 5.25s; width: 4px; height: 4px;"></div>
+  <div class="global-particle" style="left: 93%; top: -123%; animation-delay: 5.55s; width: 2px; height: 2px;"></div>
+  <div class="global-particle" style="left: 98%; top: -133%; animation-delay: 5.85s; width: 3px; height: 3px;"></div>
+</div>
   <!-- AI Chat Bot -->
   <div class="ai-chat-bot" id="ai-chat-btn">
     <i class="fas fa-robot"></i>
@@ -1737,8 +1845,10 @@
         </div>
       </div>
     </div>
-    
-    <div class="systemctl-line" style="margin-top: 400px;">
+   <!-- Digital Watch Time Display -->
+<div class="digital-time" id="digital-time" style="margin-top: 200px;">--:--:--</div>
+
+    <div class="systemctl-line" style="margin-top: 200px;">
   <i class="fas fa-terminal"></i> aura@fedora:~$ sudo systemctl start aura.service
 </div>
   </header>
@@ -2334,7 +2444,34 @@
         });
       }
 
+
+
+// Update time immediately and then every second
+
       document.addEventListener('DOMContentLoaded', function() {
+         const floatingBtn = document.getElementById('floating-access-btn');
+  const accessPanel = document.getElementById('accessibility-panel');
+  
+  if (floatingBtn && accessPanel) {
+    console.log('✅ Accessibility button found, attaching click handler');
+    
+    // Remove any existing listeners by cloning and replacing
+    const newBtn = floatingBtn.cloneNode(true);
+    floatingBtn.parentNode.replaceChild(newBtn, floatingBtn);
+    
+    // Add fresh click listener
+    newBtn.addEventListener('click', function(e) {
+      console.log('🎯 Accessibility button clicked!');
+      e.preventDefault();
+      e.stopPropagation();
+      accessPanel.classList.toggle('open');
+    });
+    
+    // Update the ID
+    newBtn.id = 'floating-access-btn';
+  } else {
+    console.error('❌ Accessibility button or panel not found!');
+  }
         // Load saved preferences
         const savedTheme = localStorage.getItem('aura-theme') || 'dark';
         setTheme(savedTheme);
@@ -2343,7 +2480,24 @@
         setLanguage(savedLang);
         
         setNavPosition('nav-left');
+        // Inside document.addEventListener('DOMContentLoaded', function() { ... })
+
+      // ========== DIGITAL WATCH TIME DISPLAY ==========
+      function updateDigitalTime() {
+        const timeElement = document.getElementById('digital-time');
+        if (!timeElement) return;
         
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        
+        timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+
+       updateDigitalTime();
+       setInterval(updateDigitalTime, 1000);
+  
         // Theme buttons
         document.getElementById('theme-light').addEventListener('click', () => setTheme('light'));
         document.getElementById('theme-neutral').addEventListener('click', () => setTheme('neutral'));
@@ -2361,7 +2515,8 @@
         setTimeout(() => typeSVG('svg-1', svgTexts[0]), 500);
         setTimeout(() => typeSVG('svg-2', svgTexts[1]), 1000);
         setTimeout(() => typeSVG('svg-3', svgTexts[2]), 1500);
-        
+        updateTime();
+        setInterval(updateTime, 1000);
         // Charts
         initCharts();
         
