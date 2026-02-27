@@ -59,18 +59,18 @@
       --light-nav-text: #2d2a28;
       --light-nav-bg: rgba(220, 200, 185, 0.3);
 
-      /* ----- DESERT DUSK (neutral mode) ----- */
-      --neutral-bg: linear-gradient(145deg, #e7dac0 0%, #d4c2a2 100%);
-      --neutral-text: #3a3530;
-      --neutral-accent: #8f7a5c;
-      --neutral-card-bg: rgba(235, 225, 200, 0.85);
-      --neutral-border: rgba(143, 122, 92, 0.35);
-      --neutral-gold: #8f7a5c;
+      /* ----- HARVEST MOON (neutral mode) ----- */
+      --neutral-bg: linear-gradient(145deg, #fbe9d2 0%, #f7d0a8 35%, #e6b47e 70%, #c97e4d 100%);
+      --neutral-text: #2d2a28;
+      --neutral-accent: #b85e3a;
+      --neutral-card-bg: rgba(245, 225, 190, 0.85);
+      --neutral-border: rgba(184, 94, 58, 0.4);
+      --neutral-gold: #b85e3a;
       --neutral-terminal: #2e5c4e;
       --neutral-subtext: #4e463b;
-      --neutral-particle: rgba(182, 114, 19, 0.6);
+      --neutral-particle: rgba(232, 117, 2, 0.7);
       --neutral-nav-text: #3a3530;
-      --neutral-nav-bg: rgba(225, 210, 180, 0.3);
+      --neutral-nav-bg: rgba(235, 205, 160, 0.3);
     }
 
     body {
@@ -90,6 +90,16 @@
       --nav-text: var(--dark-nav-text);
       --nav-bg: var(--dark-nav-bg);
       position: relative;
+      /* STANDARD CURSOR - removed custom mouse enhancements */
+      cursor: auto;
+    }
+
+    /* Ensure inputs still show text cursor */
+    input, textarea, [contenteditable="true"], select, button {
+      cursor: text;
+    }
+    button, a, .clickable, [role="button"], label[for] {
+      cursor: pointer;
     }
 
     body.light-mode {
@@ -339,6 +349,82 @@
 
     a { text-decoration: none; color: inherit; }
     section { padding: 120px 10%; position: relative; }
+
+    /* ==================== INTENSE FADE-IN EFFECT (BOTH DIRECTIONS) ==================== */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(200px) scale(0.99);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.2), 
+                  transform 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+      will-change: opacity, transform;
+    }
+
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* All cards, items inside sections also fade with slight delay and more drama */
+    .card, .skill-category, .project-card, .metric-card, .cv-preview, 
+    .fun-fact-card, .contact-brag, .github-container, .societies-container,
+    .language-card, .timeline-item, .profile-section, .header-content,
+    .typing-svg, .digital-time, .systemctl-line, .cv-item, .cv-section {
+      opacity: 0;
+      transform: translateY(30px) scale(0.98);
+      transition: opacity 0.7s cubic-bezier(0.3, 0.8, 0.4, 1.3), 
+                  transform 0.7s cubic-bezier(0.3, 0.8, 0.4, 1.3);
+      transition-delay: 0.05s;
+    }
+
+    .fade-section.visible .card,
+    .fade-section.visible .skill-category,
+    .fade-section.visible .project-card,
+    .fade-section.visible .metric-card,
+    .fade-section.visible .cv-preview,
+    .fade-section.visible .fun-fact-card,
+    .fade-section.visible .contact-brag,
+    .fade-section.visible .github-container,
+    .fade-section.visible .societies-container,
+    .fade-section.visible .language-card,
+    .fade-section.visible .timeline-item,
+    .fade-section.visible .profile-section,
+    .fade-section.visible .header-content,
+    .fade-section.visible .typing-svg,
+    .fade-section.visible .digital-time,
+    .fade-section.visible .systemctl-line,
+    .fade-section.visible .cv-item,
+    .fade-section.visible .cv-section {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Stagger child animations for extra intensity */
+    .fade-section.visible .skill-category:nth-child(1) { transition-delay: 0.1s; }
+    .fade-section.visible .skill-category:nth-child(2) { transition-delay: 0.2s; }
+    .fade-section.visible .skill-category:nth-child(3) { transition-delay: 0.3s; }
+    .fade-section.visible .skill-category:nth-child(4) { transition-delay: 0.4s; }
+    
+    .fade-section.visible .project-card:nth-child(1) { transition-delay: 0.1s; }
+    .fade-section.visible .project-card:nth-child(2) { transition-delay: 0.2s; }
+    .fade-section.visible .project-card:nth-child(3) { transition-delay: 0.3s; }
+    
+    .fade-section.visible .language-card:nth-child(1) { transition-delay: 0.05s; }
+    .fade-section.visible .language-card:nth-child(2) { transition-delay: 0.1s; }
+    .fade-section.visible .language-card:nth-child(3) { transition-delay: 0.15s; }
+    .fade-section.visible .language-card:nth-child(4) { transition-delay: 0.2s; }
+    .fade-section.visible .language-card:nth-child(5) { transition-delay: 0.25s; }
+    .fade-section.visible .language-card:nth-child(6) { transition-delay: 0.3s; }
+    .fade-section.visible .language-card:nth-child(7) { transition-delay: 0.35s; }
+    .fade-section.visible .language-card:nth-child(8) { transition-delay: 0.4s; }
+    .fade-section.visible .language-card:nth-child(9) { transition-delay: 0.45s; }
+    .fade-section.visible .language-card:nth-child(10) { transition-delay: 0.5s; }
+
+    .fade-section.visible .timeline-item:nth-child(1) { transition-delay: 0.1s; }
+    .fade-section.visible .timeline-item:nth-child(2) { transition-delay: 0.2s; }
+    .fade-section.visible .timeline-item:nth-child(3) { transition-delay: 0.3s; }
+    .fade-section.visible .timeline-item:nth-child(4) { transition-delay: 0.4s; }
+    .fade-section.visible .timeline-item:nth-child(5) { transition-delay: 0.5s; }
+    .fade-section.visible .timeline-item:nth-child(6) { transition-delay: 0.6s; }
 
     .section-title {
       font-size: 2.5rem;
@@ -1567,16 +1653,47 @@
     .fun-fact-content { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
     .fun-fact-author { color: var(--accent-gold); margin-top: 20px; text-align: right; font-style: italic; }
 
-    /* ========== FOOTER ========== */
+    /* ========== FOOTER (Enhanced Visibility - RED GLOW) ========== */
     footer {
-      background: rgba(163, 3, 3, 0.8);
+      background: #ff0000 !important; /* Solid red background */
       backdrop-filter: blur(15px);
       padding: 45px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid var(--border-accent);
+      border-top: 2px solid var(--accent-gold);
+      color: var(--text);
+      /* Glow animation with color change */
+      animation: footerGlow 3s infinite alternate;
+      font-weight: 600;
+      text-shadow: 0 0 5px currentColor;
+      position: relative;
+      z-index: 10;
     }
+
+    @keyframes footerGlow {
+      0% {
+        box-shadow: 0 -5px 25px red, 0 -5px 25px red;
+        background: #ff0000;
+      }
+      25% {
+        box-shadow: 0 -5px 35px #ffaa00, 0 -5px 35px #ffaa00;
+        background: #ff3300;
+      }
+      50% {
+        box-shadow: 0 -5px 45px #00ffaa, 0 -5px 45px #00ffaa;
+        background: #ff0066;
+      }
+      75% {
+        box-shadow: 0 -5px 35px #aa00ff, 0 -5px 35px #aa00ff;
+        background: #9900ff;
+      }
+      100% {
+        box-shadow: 0 -5px 25px red, 0 -5px 25px red;
+        background: #ff0000;
+      }
+    }
+
     .parental-footer-logo {
       width: 80px;
       height: 80px;
@@ -1622,6 +1739,7 @@
 <body class="dark-mode nav-left-active" data-lang="en">
  <!-- FULL-PAGE FLOATING PARTICLES - ENHANCED DENSITY -->
 <div class="global-particles">
+  <!-- ... (particles unchanged) ... -->
   <!-- First wave - dense distribution -->
   <div class="global-particle" style="left: 2%; top: -5%; animation-delay: 0s; width: 6px; height: 6px;"></div>
   <div class="global-particle" style="left: 7%; top: -15%; animation-delay: 0.3s; width: 4px; height: 4px;"></div>
@@ -1909,7 +2027,7 @@
   </div>
 
   <!-- Header -->
-  <header id="home">
+  <header id="home" class="fade-section">
     <div class="header-container">
       <div class="profile-section">
         <div class="profile-pic">
@@ -1943,7 +2061,7 @@
   </header>
 
   <!-- About - Full Section -->
-  <section id="about">
+  <section id="about" class="fade-section">
     <h2 class="section-title"><span class="lang-en">📖 My Narrative:</span><span class="lang-sw">📖 Simulizi Yangu:</span><span class="lang-fr">📖 Mon Récit:</span><span class="lang-de">📖 Meine Geschichte:</span><span class="lang-ja">📖 私の物語:</span></h2>
     <div class="card">
       <div class="timeline-item">
@@ -1974,7 +2092,7 @@
   </section>
 
   <!-- Notorious Languages - Infinite Loop -->
-  <section id="notorious-languages">
+  <section id="notorious-languages" class="fade-section">
     <h2 class="section-title"><span class="lang-en"> NOTORIOUS LANGUAGES ⤩</span><span class="lang-sw"> LUGHA ZINAZOJULIKANA ⤩</span><span class="lang-fr"> LANGUES NOTOIRES ⤩</span><span class="lang-de"> BERÜCHTIGTE SPRACHEN ⤩</span><span class="lang-ja"> 注目の言語 ⤩</span></h2>
     <div class="language-subtitle">✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿</div>
     <div class="languages-wrapper">
@@ -2007,7 +2125,7 @@
   </section>
 
   <!-- Skills -->
-  <section id="skills">
+  <section id="skills" class="fade-section">
     <h2 class="section-title"><span class="lang-en"> god skills:</span><span class="lang-sw"> ujuzi wa kimungu:</span><span class="lang-fr"> compétences divines:</span><span class="lang-de"> göttliche Fähigkeiten:</span><span class="lang-ja">神スキル：</span></h2>
     <div class="skills-container">
       <div class="skill-category">
@@ -2059,7 +2177,7 @@
   </section>
 
   <!-- Metrics -->
-  <section id="metrics">
+  <section id="metrics" class="fade-section">
     <h2 class="section-title"><span class="lang-en"> Metrics & Analytics:</span><span class="lang-sw">Vipimo na Uchambuzi:</span><span class="lang-fr"> Métriques et Analyses:</span><span class="lang-de"> Metriken und Analysen:</span><span class="lang-ja"> メトリクスと分析：</span></h2>
     <div class="metrics-grid">
       <div class="metric-card">
@@ -2081,7 +2199,7 @@
   </section>
 
   <!-- Projects -->
-  <section id="projects">
+  <section id="projects" class="fade-section">
     <h2 class="section-title"><span class="lang-en">✨ Featured Projects ⤩</span><span class="lang-sw">✨ Miradi Iliyoangaziwa ⤩</span><span class="lang-fr">✨ Projets Vedettes ⤩</span><span class="lang-de">✨ Ausgewählte Projekte ⤩</span><span class="lang-ja">✨ 厳選プロジェクト ⤩</span></h2>
     <div class="projects-tabs">
       <button class="tab-btn active" data-tab="major"><span class="lang-en">Major Projects</span><span class="lang-sw">Miradi Mikubwa</span><span class="lang-fr">Projets Majeurs</span><span class="lang-de">Hauptprojekte</span><span class="lang-ja">主要プロジェクト</span></button>
@@ -2140,7 +2258,7 @@
   </section>
 
   <!-- Resume - Full Section -->
-  <section id="resume">
+  <section id="resume" class="fade-section">
     <h2 class="section-title"><span class="lang-en">📄 My Professional Resume: </span><span class="lang-sw">📄 Wasifu Wangu wa Kitaalamu:</span><span class="lang-fr">📄 Mon CV Professionnel:</span><span class="lang-de">📄 Mein Professioneller Lebenslauf:</span><span class="lang-ja">📄 プロフェッショナル履歴書:</span></h2>
     <div class="resume-container">
       <div class="cv-preview">
@@ -2268,7 +2386,7 @@
   </section>
 
   <!-- GitHub Stats -->
-  <section id="github-stats">
+  <section id="github-stats" class="fade-section">
     <h2 class="section-title"><span class="lang-en">🐙 GitHub Analytics:</span><span class="lang-sw">🐙 Uchambuzi wa GitHub:</span><span class="lang-fr">🐙 Analyses GitHub:</span><span class="lang-de">🐙 GitHub-Analysen:</span><span class="lang-ja">🐙 GitHub分析:</span></h2>
     <div class="github-container">
       <div>
@@ -2289,7 +2407,7 @@
   </section>
 
   <!-- Societies -->
-  <section id="societies">
+  <section id="societies" class="fade-section">
     <h2 class="section-title"><span class="lang-en"> Societies & Memberships:</span><span class="lang-sw"> Jumuiya na Uanachama:</span><span class="lang-fr"> Sociétés et Adhésions:</span><span class="lang-de"> Gesellschaften & Mitgliedschaften:</span><span class="lang-ja"> 所属団体・会員資格:</span></h2>
     <div class="societies-container">
       <div class="society-item">
@@ -2308,7 +2426,7 @@
   </section>
 
   <!-- Fun Facts -->
-  <section id="fun-facts">
+  <section id="fun-facts" class="fade-section">
     <h2 class="section-title"><span class="lang-en"> Fun Facts & Dev Quotes:</span><span class="lang-sw"> Ukweli wa Kufurahisha na Manukuu ya Wasanidi:</span><span class="lang-fr">Faits Amusants et Citations de Dev:</span><span class="lang-de"> Wissenswertes & Entwickler-Zitate:</span><span class="lang-ja">😄 豆知識＆開発者の名言</span></h2>
     <div class="fun-facts-container">
       <div class="fun-fact-card">
@@ -2330,7 +2448,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" class="fade-section">
     <div class="telecom-doodles">
       <i class="fas fa-satellite"></i><i class="fas fa-wifi"></i><i class="fas fa-broadcast-tower"></i><i class="fas fa-satellite-dish"></i>
       <i class="fas fa-signal"></i><i class="fas fa-antenna"></i><i class="fas fa-tower-cell"></i><i class="fas fa-radio"></i>
@@ -2373,8 +2491,8 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- Footer (Enhanced Visibility - RED GLOW) -->
+  <footer class="fade-section">
     <div>© 2026 Aura™ Joshua ❖ <span class="lang-en">All rights reserved</span><span class="lang-sw">Haki zote zimehifadhiwa</span><span class="lang-fr">Tous droits réservés</span><span class="lang-de">Alle Rechte vorbehalten</span><span class="lang-ja">全著作権所有</span> ❖ Built with ♥ in Nairobi</div>
     <div style="display: flex; align-items: center; gap: 20px;">
       <div class="social-icons" style="margin-top: 0;">
@@ -2388,10 +2506,38 @@
     </div>
   </footer>
 
+  <!-- NO CAT FOLLOWER - removed all mouse enhancements -->
+
   <script>
     (function() {
       // --- Utility: safe element selection ---
       function safeGet(id) { return document.getElementById(id); }
+
+      // ========== INTENSE FADE-IN ON SCROLL (BOTH DIRECTIONS) ==========
+      function checkFadeIn() {
+        const fadeElements = document.querySelectorAll('.fade-section');
+        const windowHeight = window.innerHeight;
+        // trigger zone: when element is within 85% of viewport (more intense)
+        const triggerPoint = windowHeight * 0.82; 
+
+        fadeElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          const elementTop = rect.top;
+          const elementBottom = rect.bottom;
+          
+          // Element is considered visible if it's entering the viewport (both up and down)
+          // condition: top of element is less than trigger point AND bottom is > 0 (not fully out)
+          const isVisible = elementTop < triggerPoint && elementBottom > 50; 
+          
+          if (isVisible) {
+            el.classList.add('visible');
+          } else {
+            // Remove class when element leaves viewport (for both directions)
+            // This ensures fade-out when scrolling away
+            el.classList.remove('visible');
+          }
+        });
+      }
 
       // Theme switcher
       function setTheme(mode) {
@@ -2548,10 +2694,9 @@
         const closePanel = safeGet('close-access-panel');
 
         if (accessBtn && accessPanel) {
-          // Remove stale listeners by cloning (fresh start)
           const newNavBtn = accessBtn.cloneNode(true);
           accessBtn.parentNode.replaceChild(newNavBtn, accessBtn);
-          newNavBtn.id = 'access-btn'; // keep ID
+          newNavBtn.id = 'access-btn';
           newNavBtn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -2576,7 +2721,6 @@
           });
         }
 
-        // Close panel when clicking outside (optional)
         document.addEventListener('click', function(e) {
           if (accessPanel && accessPanel.classList.contains('open') &&
               !accessPanel.contains(e.target) && 
@@ -2593,7 +2737,6 @@
         const minorContainer = safeGet('minor-projects');
 
         if (tabMajor && tabMinor && majorContainer && minorContainer) {
-          // remove any previously attached listeners by cloning (optional but safe)
           const newMajorTab = tabMajor.cloneNode(true);
           const newMinorTab = tabMinor.cloneNode(true);
           tabMajor.parentNode.replaceChild(newMajorTab, tabMajor);
@@ -2841,10 +2984,6 @@
           document.body.classList.add('high-contrast');
         });
 
-        // AI Chat (unchanged, keep)
-        // ... (existing AI chat code) – omitted for brevity but remains intact in final output
-        // Since we cannot remove it, we keep the original AI chat code as is.
-
         // Contact form
         safeGet('contact-form')?.addEventListener('submit', function(e) {
           e.preventDefault();
@@ -2880,7 +3019,6 @@
         });
 
         // ===== AI Chat code (full original, untouched) =====
-        // (Kept exactly as provided, just referencing safeGet where needed)
         const chatBtn = safeGet('ai-chat-btn');
         const chatWin = safeGet('ai-chat-window');
         const closeChat = safeGet('close-chat');
@@ -3041,6 +3179,11 @@
             apiKeyPanel.classList.remove('open');
           }
         });
+
+        // Fade-in scroll listener (intense, both directions)
+        window.addEventListener('scroll', checkFadeIn);
+        window.addEventListener('resize', checkFadeIn);
+        checkFadeIn(); // initial check
       });
     })();
   </script>
