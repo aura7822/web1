@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aura's Baqyard </title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nimbus+Mono:wght@400;600;700&family=Fira+Code:wght@400;600;700&family=Orbitron:wght@400;700;900&family=OpenDyslexic&display=swap" rel="stylesheet">
+}
+}
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 -->
@@ -42,7 +41,7 @@
       --dark-gold: #d4af37;
       --dark-terminal: #c9f0b0;
       --dark-subtext: #e0d5c6;
-      --dark-particle: rgb(139, 7, 7);r
+      --dark-particle: rgb(139, 7, 7);
       --dark-nav-text: #d4af37;
       --dark-nav-bg: rgba(31, 31, 31, 0.3);
 
@@ -82,6 +81,9 @@
       background: var(--dark-bg);
       color: var(--dark-text);
       --accent-gold: var(--dark-accent);
+      /* fallback text vars used throughout the CSS */
+      --text: var(--dark-text);
+      --text-light: rgba(255,255,255,0.9);
       --card-bg: var(--dark-card-bg);
       --border-accent: var(--dark-border);
       --terminal-green: var(--dark-terminal);
@@ -113,6 +115,8 @@
       --border-accent: var(--light-border);
       --terminal-green: var(--light-terminal);
       --subtext: var(--light-subtext);
+      --text: var(--light-text);
+      --text-light: rgba(0,0,0,0.85);
     }
     
     body.neutral-mode {
@@ -126,6 +130,8 @@
       --border-accent: var(--neutral-border);
       --terminal-green: var(--neutral-terminal);
       --subtext: var(--neutral-subtext);
+      --text: var(--neutral-text);
+      --text-light: rgba(255,255,255,0.92);
     }
 
     /* High contrast mode */
@@ -1468,7 +1474,7 @@
       background: rgba(54, 15, 36, 0.909); 
       backdrop-filter: blur(30px); 
       position: relative;
-      overflow: hidden;rr
+      overflow: hidden;
     }
     
     .telecom-doodles {
@@ -1661,7 +1667,7 @@
   backdrop-filter: blur(15px);
   padding: 40px 10%;
   display: flex;
-  justify-content: space-between;r
+  justify-content: space-between;
   align-items: center;
   color: var(--text-light);
   flex-wrap: wrap;
@@ -1754,7 +1760,6 @@
   transform: translateY(-8px) scale(1.25) rotate(-3deg) !important;
   animation-play-state: paused;
 }
-*/
 /* Light mode — invert so "aura" is darker */
 body.light-mode .name-light .name-char {
   background: linear-gradient(135deg, #1a0030 0%, #2d0050 50%, #4a0080 100%);
@@ -2812,10 +2817,10 @@ body.light-mode .name-dark .name-char {
     <div class="accessibility-option">
       <label for="nav-position"><span class="lang-en">Navigation Position:</span><span class="lang-sw">Eneo la urambazaji:</span><span class="lang-fr">Position de navigation:</span><span class="lang-de">Navigationsposition:</span><span class="lang-ja">ナビゲーション位置:</span></label>
       <select id="nav-position">
-        <option value="nav-left"><span class="lang-en">Left (default)</span><span class="lang-sw">Kushoto (chaguo-msingi)</span><span class="lang-fr">Gauche (défaut)</span><span class="lang-de">Links (Standard)</span><span class="lang-ja">左（デフォルト）</span></option>
-        <option value="nav-right"><span class="lang-en">Right</span><span class="lang-sw">Kulia</span><span class="lang-fr">Droite</span><span class="lang-de">Rechts</span><span class="lang-ja">右</span></option>
-        <option value="nav-top"><span class="lang-en">Top</span><span class="lang-sw">Juu</span><span class="lang-fr">Haut</span><span class="lang-de">Oben</span><span class="lang-ja">上</span></option>
-        <option value="nav-bottom"><span class="lang-en">Bottom</span><span class="lang-sw">Chini</span><span class="lang-fr">Bas</span><span class="lang-de">Unten</span><span class="lang-ja">下</span></option>
+        <option value="nav-left">Left (default)</option>
+        <option value="nav-right">Right</option>
+        <option value="nav-top">Top</option>
+        <option value="nav-bottom">Bottom</option>
       </select>
     </div>
     <div class="accessibility-option">
@@ -2876,8 +2881,8 @@ body.light-mode .name-dark .name-char {
             <span class="name-char" style="--i:4">j</span><span class="name-char" style="--i:5">o</span><span class="name-char" style="--i:6">s</span><span class="name-char" style="--i:7">h</span><span class="name-char" style="--i:8">u</span><span class="name-char" style="--i:9">a</span><span class="name-char" style="--i:10">.</span><span class="name-char" style="--i:11">.</span><span class="name-char" style="--i:12">.</span>
           </span>
         </h1>
-        <div class="roles">Blockchain & Web3 dev ❖ DevOps Engineer ❖ Fullstack Developer</div>
-        <div class="sub-roles">L2 Engineer ❖ System Admin ❖ Data Analyst ❖ Automation Expert</div>
+        <div class="roles">Mobile App dev ❖ DevOps Engineer ❖ Fullstack Developer</div>
+        <div class="sub-roles">JUnior Software Engineer ❖ System Admin ❖ Data Analyst ❖ Automation Expert</div>
         <div class="typing-container">
           <div class="typing-text" id="typing-text"></div>
           <div class="typing-text-green" id="typing-text-green"></div>
@@ -2894,7 +2899,7 @@ body.light-mode .name-dark .name-char {
 <div class="digital-time" id="digital-time" style="margin-top: 200px;">--:--:--</div>
 
     <div class="systemctl-line" style="margin-top: 200px;">
-  <i class="fas fa-terminal"></i> aura@fedora:~$ sudo systemctl start aura.service
+  <i class="fas fa-terminal"></i> aura@arch:~$ sudo systemctl start aura.service
 </div>
   </header>
 
@@ -2904,27 +2909,27 @@ body.light-mode .name-dark .name-char {
     <div class="card">
       <div class="timeline-item">
         <h3>🎕 <span class="lang-en">Software Engineering Graduate</span><span class="lang-sw">Mhitimu wa Uhandisi wa Programu</span><span class="lang-fr">Diplômé en Génie Logiciel</span><span class="lang-de">Absolvent des Software-Engineerings</span><span class="lang-ja">ソフトウェアエンジニアリング卒業生</span></h3>
-        <p><span class="lang-en">Undergraduate in Software Engineering at Zetech University, specializing in web development and systems design. Graduated with honors in automation engineering and distributed systems. Thesis on "IoT Security Protocols and Automation Frameworks" received departmental recognition.</span><span class="lang-sw">Mwanafunzi wa Shahada ya Kwanza katika Uhandisi wa Programu katika Chuo Kikuu cha Zetech, maalumu katika ukuzaji wa wavuti na muundo wa mifumo. Alihitimu kwa heshima katika uhandisi wa automatisering na mifumo iliyosambazwa.</span><span class="lang-fr">Étudiant en Génie Logiciel à l'Université Zetech, spécialisé dans le développement web et la conception de systèmes. Diplômé avec mention en ingénierie de l'automatisation et systèmes distribués.</span><span class="lang-de">Student im Bachelor of Software Engineering an der Zetech-Universität mit Spezialisierung auf Webentwicklung und Systemdesign. Mit Auszeichnung abgeschlossen in Automatisierungstechnik und verteilten Systemen.</span><span class="lang-ja">Zetech大学でソフトウェアエンジニアリングの学士課程在籍中。ウェブ開発とシステム設計を専門とする。自動化エンジニアリングと分散システムで優等賞を受賞。</span></p>
+        <p><span class="lang-en">Undergraduate in Software Engineering at Zetech University, specializing in devops and systems design. Graduated with a multitude of skills aquired from several personal driven projects.</span><span class="lang-sw">Mwanafunzi wa Shahada ya Kwanza katika Uhandisi wa Programu katika Chuo Kikuu cha Zetech, maalumu katika ukuzaji wa wavuti na muundo wa mifumo. Alihitimu kwa heshima katika uhandisi wa automatisering na mifumo iliyosambazwa.</span><span class="lang-fr">Étudiant en Génie Logiciel à l'Université Zetech, spécialisé dans le développement web et la conception de systèmes. Diplômé avec mention en ingénierie de l'automatisation et systèmes distribués.</span><span class="lang-de">Student im Bachelor of Software Engineering an der Zetech-Universität mit Spezialisierung auf Webentwicklung und Systemdesign. Mit Auszeichnung abgeschlossen in Automatisierungstechnik und verteilten Systemen.</span><span class="lang-ja">Zetech大学でソフトウェアエンジニアリングの学士課程在籍中。ウェブ開発とシステム設計を専門とする。自動化エンジニアリングと分散システムで優等賞を受賞。</span></p>
       </div>
       <div class="timeline-item">
-        <h3> 🎕 <span class="lang-en">IoT & Web Development Specialist</span><span class="lang-sw">Mtaalamu wa IoT na Ukuzaji wa Wavuti</span><span class="lang-fr">Spécialiste IoT et Développement Web</span><span class="lang-de">IoT- und Webentwicklungsspezialist</span><span class="lang-ja">IoT＆ウェブ開発スペシャリスト</span></h3>
-        <p><span class="lang-en">Developed 12+ IoT solutions integrated with real-time web dashboards for environmental monitoring, smart agriculture, and home automation. Achieved 99.9% system uptime across all deployments. Created custom MQTT brokers and WebSocket servers for live data streaming.</span><span class="lang-sw">Nilitengeneza zaidi ya suluhisho 12 za IoT zilizounganishwa na dashibodi za wavuti za wakati halisi kwa ufuatiliaji wa mazingira, kilimo smart, na automatisering ya nyumbani.</span><span class="lang-fr">Développé plus de 12 solutions IoT intégrées à des tableaux de bord web en temps réel pour la surveillance environnementale, l'agriculture intelligente et l'automatisation domestique.</span><span class="lang-de">Entwickelte über 12 IoT-Lösungen mit Echtzeit-Web-Dashboards für Umweltüberwachung, intelligente Landwirtschaft und Hausautomation.</span><span class="lang-ja">環境モニタリング、スマート農業、ホームオートメーション向けのリアルタイムウェブダッシュボードと統合された12以上のIoTソリューションを開発。</span></p>
+        <h3> 🎕 <span class="lang-en">IoT & Mobile Development Specialist</span><span class="lang-sw">Mtaalamu wa IoT na Ukuzaji wa Wavuti</span><span class="lang-fr">Spécialiste IoT et Développement Mobile</span><span class="lang-de">IoT- und Webentwicklungsspezialist</span><span class="lang-ja">IoT＆ウェブ開発スペシャリスト</span></h3>
+        <p><span class="lang-en">Developed IoT solution(s) integrated with real-time web dashboards for environmental monitoring, achieving 99.9% system uptime across all deployments. Created custom API brokers for advanced ai responses from debates, executing a premium feel.</span><span class="lang-sw">Nilitengeneza zaidi ya suluhisho 12 za IoT zilizounganishwa na dashibodi za wavuti za wakati halisi kwa ufuatiliaji wa mazingira, kilimo smart, na automatisering ya nyumbani.</span><span class="lang-fr">Développé plus de 12 solutions IoT intégrées à des tableaux de bord web en temps réel pour la surveillance environnementale, l'agriculture intelligente et l'automatisation domestique.</span><span class="lang-de">Entwickelte über 12 IoT-Lösungen mit Echtzeit-Web-Dashboards für Umweltüberwachung, intelligente Landwirtschaft und Hausautomation.</span><span class="lang-ja">環境モニタリング、スマート農業、ホームオートメーション向けのリアルタイムウェブダッシュボードと統合された12以上のIoTソリューションを開発。</span></p>
       </div>
       <div class="timeline-item">
         <h3> 🎕 <span class="lang-en">Open Source Contributor & Community Leader</span><span class="lang-sw">Mchangiaji Chanzo Huria na Kiongozi wa Jumuiya</span><span class="lang-fr">Contributeur Open Source et Leader Communautaire</span><span class="lang-de">Open-Source-Mitwirkender und Community-Leiter</span><span class="lang-ja">オープンソースコントリビューター＆コミュニティリーダー</span></h3>
-        <p><span class="lang-en">Active contributor to 15+ open-source projects with 1,200+ GitHub contributions in 2025. Focus areas: accessibility tooling, developer productivity, and automation scripts. Community lead at Nairobi Tech Hub, organizing monthly workshops and hackathons for 200+ developers.</span><span class="lang-sw">Mchangiaji hai katika zaidi ya miradi 15 ya chanzo huria na michango zaidi ya 1,200 ya GitHub mnamo 2025. Maeneo ya kuzingatia: zana za ufikivu, tija ya wasanidi programu, na hati za automatisering.</span><span class="lang-fr">Contributeur actif à plus de 15 projets open source avec plus de 1 200 contributions GitHub en 2025. Domaines d'intérêt : outils d'accessibilité, productivité des développeurs et scripts d'automatisation.</span><span class="lang-de">Aktiver Mitwirkender an über 15 Open-Source-Projekten mit über 1.200 GitHub-Beiträgen im Jahr 2025. Schwerpunkte: Barrierefreiheitswerkzeuge, Entwicklerproduktivität und Automatisierungsskripte.</span><span class="lang-ja">2025年には15以上のオープンソースプロジェクトに積極的に貢献し、GitHubへのコントリビューションは1,200以上。アクセシビリティツール、開発者生産性、自動化スクリプトに注力。</span></p>
+        <p><span class="lang-en">Active contributor tan array open-source projects with 400+ GitHub contributions in 2025/26. Focus areas: accessibility tooling, developer productivity, and automation scripts. </span><span class="lang-sw">Mchangiaji hai katika zaidi ya miradi 15 ya chanzo huria na michango zaidi ya 1,200 ya GitHub mnamo 2025. Maeneo ya kuzingatia: zana za ufikivu, tija ya wasanidi programu, na hati za automatisering.</span><span class="lang-fr">Contributeur actif à plus de 15 projets open source avec plus de 1 200 contributions GitHub en 2025. Domaines d'intérêt : outils d'accessibilité, productivité des développeurs et scripts d'automatisation.</span><span class="lang-de">Aktiver Mitwirkender an über 15 Open-Source-Projekten mit über 1.200 GitHub-Beiträgen im Jahr 2025. Schwerpunkte: Barrierefreiheitswerkzeuge, Entwicklerproduktivität und Automatisierungsskripte.</span><span class="lang-ja">2025年には15以上のオープンソースプロジェクトに積極的に貢献し、GitHubへのコントリビューションは1,200以上。アクセシビリティツール、開発者生産性、自動化スクリプトに注力。</span></p>
       </div>
       <div class="timeline-item">
         <h3>🎕 <span class="lang-en">Full-Stack Development Architect</span><span class="lang-sw">Msanifu wa Ukuzaji wa Full-Stack</span><span class="lang-fr">Architecte de Développement Full-Stack</span><span class="lang-de">Full-Stack-Entwicklungsarchitekt</span><span class="lang-ja">フルスタック開発アーキテクト</span></h3>
-        <p><span class="lang-en">Architected and deployed 8 full-stack applications serving 50,000+ monthly active users. Tech stack includes React, Node.js, Python FastAPI, and MongoDB. Implemented microservices architecture reducing server costs by 40% while maintaining 99.99% uptime.</span><span class="lang-sw">Nilibuni na kupeleka programu 8 za full-stack zinazohudumia zaidi ya watumiaji 50,000 kwa mwezi. Msururu wa teknolojia ni pamoja na React, Node.js, Python FastAPI, na MongoDB.</span><span class="lang-fr">Conçu et déployé 8 applications full-stack servant plus de 50 000 utilisateurs actifs mensuels. Stack technique incluant React, Node.js, Python FastAPI et MongoDB.</span><span class="lang-de">Entwarf und implementierte 8 Full-Stack-Anwendungen mit über 50.000 monatlich aktiven Nutzern. Technologie-Stack umfasst React, Node.js, Python FastAPI und MongoDB.</span><span class="lang-ja">月間アクティブユーザー数50,000人以上の8つのフルスタックアプリケーションを設計・デプロイ。React、Node.js、Python FastAPI、MongoDBを使用。</span></p>
+        <p><span class="lang-en">Architected and deployed several full-stack applications serving active users. Tech stack includes React, Node.js, Python FastAPI, and MongoDB. Implemented microservices architecture reducing server costs by 40% while maintaining 99.99% uptime.</span><span class="lang-sw">Nilibuni na kupeleka programu 8 za full-stack zinazohudumia zaidi ya watumiaji 50,000 kwa mwezi. Msururu wa teknolojia ni pamoja na React, Node.js, Python FastAPI, na MongoDB.</span><span class="lang-fr">Conçu et déployé 8 applications full-stack servant plus de 50 000 utilisateurs actifs mensuels. Stack technique incluant React, Node.js, Python FastAPI et MongoDB.</span><span class="lang-de">Entwarf und implementierte 8 Full-Stack-Anwendungen mit über 50.000 monatlich aktiven Nutzern. Technologie-Stack umfasst React, Node.js, Python FastAPI und MongoDB.</span><span class="lang-ja">月間アクティブユーザー数50,000人以上の8つのフルスタックアプリケーションを設計・デプロイ。React、Node.js、Python FastAPI、MongoDBを使用。</span></p>
       </div>
       <div class="timeline-item">
         <h3>🎕 <span class="lang-en">Automation & DevOps Engineer</span><span class="lang-sw">Mhandisi wa Automatisering na DevOps</span><span class="lang-fr">Ingénieur Automation et DevOps</span><span class="lang-de">Automatisierungs- und DevOps-Ingenieur</span><span class="lang-ja">自動化＆DevOpsエンジニア</span></h3>
         <p><span class="lang-en">Designed CI/CD pipelines using GitHub Actions and Jenkins, reducing deployment time from 45 minutes to 6 minutes (85% improvement). Created automated testing frameworks that increased code coverage from 52% to 94%. Implemented infrastructure as code using Terraform and Ansible.</span><span class="lang-sw">Nilibuni mifumo ya CI/CD kwa kutumia GitHub Actions na Jenkins, kupunguza muda wa kupeleka kutoka dakika 45 hadi dakika 6 (uboreshaji wa 85%).</span><span class="lang-fr">Conçu des pipelines CI/CD avec GitHub Actions et Jenkins, réduisant le temps de déploiement de 45 minutes à 6 minutes (amélioration de 85 %).</span><span class="lang-de">Entwickelte CI/CD-Pipelines mit GitHub Actions und Jenkins, wodurch die Bereitstellungszeit von 45 Minuten auf 6 Minuten reduziert wurde (85 % Verbesserung).</span><span class="lang-ja">GitHub ActionsとJenkinsを使用したCI/CDパイプラインを設計し、デプロイ時間を45分から6分に短縮（85％改善）。</span></p>
       </div>
       <div class="timeline-item">
-        <h3>🎕 <span class="lang-en">Security & Systems Optimization Expert</span><span class="lang-sw">Mtaalamu wa Usalama na Uboreshaji wa Mifumo</span><span class="lang-fr">Expert en Sécurité et Optimisation de Systèmes</span><span class="lang-de">Sicherheits- und Systemoptimierungsexperte</span><span class="lang-ja">セキュリティ＆システム最適化エキスパート</span></h3>
-        <p><span class="lang-en">Developed enterprise-grade encryption tools using AES-256 and RSA, securing sensitive data for 500+ business applications. Optimized database queries and implemented caching strategies resulting in 60% faster load times. Regular speaker at cybersecurity meetups.</span><span class="lang-sw">Nilitengeneza zana za usimbaji fiche za kiwango cha biashara kwa kutumia AES-256 na RSA, kulinda data nyeti kwa zaidi ya programu 500 za biashara.</span><span class="lang-fr">Développé des outils de chiffrement de niveau entreprise avec AES-256 et RSA, sécurisant les données sensibles pour plus de 500 applications métier.</span><span class="lang-de">Entwickelte Verschlüsselungswerkzeuge auf Unternehmensebene mit AES-256 und RSA, die sensible Daten für über 500 Geschäftsanwendungen sichern.</span><span class="lang-ja">AES-256とRSAを使用したエンタープライズグレードの暗号化ツールを開発し、500以上のビジネスアプリケーションの機密データを保護。</span></p>
+        <h3>🎕 <span class="lang-en">Tech Startup Founder</span><span class="lang-sw">Mtaalamu wa Usalama na Uboreshaji wa Mifumo</span><span class="lang-fr">Expert en Sécurité et Optimisation de Systèmes</span><span class="lang-de">Sicherheits- und Systemoptimierungsexperte</span><span class="lang-ja">セキュリティ＆システム最適化エキスパート</span></h3>
+        <p><span class="lang-en">Developed the Aspect™ software startup which specialises in providing ubiquitous solutions to real world challenges involving the tech world, Specialising in AI integration & Automation and systems development.</span><span class="lang-sw">Nilitengeneza zana za usimbaji fiche za kiwango cha biashara kwa kutumia AES-256 na RSA, kulinda data nyeti kwa zaidi ya programu 500 za biashara.</span><span class="lang-fr">Développé des outils de chiffrement de niveau entreprise avec AES-256 et RSA, sécurisant les données sensibles pour plus de 500 applications métier.</span><span class="lang-de">Entwickelte Verschlüsselungswerkzeuge auf Unternehmensebene mit AES-256 und RSA, die sensible Daten für über 500 Geschäftsanwendungen sichern.</span><span class="lang-ja">AES-256とRSAを使用したエンタープライズグレードの暗号化ツールを開発し、500以上のビジネスアプリケーションの機密データを保護。</span></p>
       </div>
     </div>
   </section>
@@ -2951,6 +2956,7 @@ body.light-mode .name-dark .name-char {
         <div class="language-card"><div class="language-icon"><i class="fas fa-terminal"></i></div><div class="language-name">BASH</div><div class="language-level">devops • cli</div><div class="glow-bar"></div></div>
         <div class="language-card"><div class="language-icon"><i class="fas fa-crab"></i></div><div class="language-name">RUST</div><div class="language-level">systems • safe</div><div class="glow-bar"></div></div>
         <div class="language-card"><div class="language-icon"><i class="fab fa-golang"></i></div><div class="language-name">GO</div><div class="language-level">cloud • concurrent</div><div class="glow-bar"></div></div>
+         <div class="language-card"><div class="language-icon"><i class="fab fa-kotlin"></i></div><div class="language-name">KOTLIN</div><div class="language-level">Mobile• SMEs</div><div class="glow-bar"></div></div>
         <div class="language-card"><div class="language-icon"><i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i></div><div class="language-name">HTML/CSS</div><div class="language-level">ui • responsive</div><div class="glow-bar"></div></div>
         
         <!-- Duplicate set for infinite loop -->
@@ -2963,6 +2969,7 @@ body.light-mode .name-dark .name-char {
         <div class="language-card"><div class="language-icon"><i class="fas fa-terminal"></i></div><div class="language-name">BASH</div><div class="language-level">devops • cli</div><div class="glow-bar"></div></div>
         <div class="language-card"><div class="language-icon"><i class="fas fa-crab"></i></div><div class="language-name">RUST</div><div class="language-level">systems • safe</div><div class="glow-bar"></div></div>
         <div class="language-card"><div class="language-icon"><i class="fab fa-golang"></i></div><div class="language-name">GO</div><div class="language-level">cloud • concurrent</div><div class="glow-bar"></div></div>
+         <div class="language-card"><div class="language-icon"><i class="fab fa-kotlin"></i></div><div class="language-name">KOTLIN</div><div class="language-level">Mobile• SMEs</div><div class="glow-bar"></div></div>
         <div class="language-card"><div class="language-icon"><i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i></div><div class="language-name">HTML/CSS</div><div class="language-level">ui • responsive</div><div class="glow-bar"></div></div>
       </div>
     </div>
@@ -2973,7 +2980,7 @@ body.light-mode .name-dark .name-char {
     <h2 class="section-title"><span class="lang-en"> god skills:</span><span class="lang-sw"> ujuzi wa kimungu:</span><span class="lang-fr"> compétences divines:</span><span class="lang-de"> göttliche Fähigkeiten:</span><span class="lang-ja">神スキル：</span></h2>
     <div class="skills-container">
       <div class="skill-category">
-        <h3>🎨 <span class="lang-en">Frontend</span><span class="lang-sw">Sehemu ya mbele</span><span class="lang-fr">Frontend</span><span class="lang-de">Frontend</span><span class="lang-ja">フロントエンド</span></h3>
+        <h3> <span class="lang-en">Frontend</span><span class="lang-sw">Sehemu ya mbele</span><span class="lang-fr">Frontend</span><span class="lang-de">Frontend</span><span class="lang-ja">フロントエンド</span></h3>
         <ul class="skill-list">
           <li>HTML5/CSS3/Sass <span class="skill-level">95%</span></li>
           <li>JavaScript (ES6+) <span class="skill-level">92%</span></li>
@@ -2984,7 +2991,7 @@ body.light-mode .name-dark .name-char {
         </ul>
       </div>
       <div class="skill-category">
-        <h3>⚙️ <span class="lang-en">Backend</span><span class="lang-sw">Sehemu ya nyuma</span><span class="lang-fr">Backend</span><span class="lang-de">Backend</span><span class="lang-ja">バックエンド</span></h3>
+        <h3> <span class="lang-en">Backend</span><span class="lang-sw">Sehemu ya nyuma</span><span class="lang-fr">Backend</span><span class="lang-de">Backend</span><span class="lang-ja">バックエンド</span></h3>
         <ul class="skill-list">
           <li>Node.js/Express <span class="skill-level">90%</span></li>
           <li>Python (FastAPI/Flask) <span class="skill-level">94%</span></li>
@@ -2995,7 +3002,7 @@ body.light-mode .name-dark .name-char {
         </ul>
       </div>
       <div class="skill-category">
-        <h3>📱 <span class="lang-en">Mobile & IoT</span><span class="lang-sw">Simu na IoT</span><span class="lang-fr">Mobile & IoT</span><span class="lang-de">Mobil & IoT</span><span class="lang-ja">モバイル＆IoT</span></h3>
+        <h3> <span class="lang-en">Mobile & IoT</span><span class="lang-sw">Simu na IoT</span><span class="lang-fr">Mobile & IoT</span><span class="lang-de">Mobil & IoT</span><span class="lang-ja">モバイル＆IoT</span></h3>
         <ul class="skill-list">
           <li>Android (Java/Kotlin) <span class="skill-level">78%</span></li>
           <li>React Native <span class="skill-level">72%</span></li>
@@ -3006,7 +3013,7 @@ body.light-mode .name-dark .name-char {
         </ul>
       </div>
       <div class="skill-category">
-        <h3>🤖 <span class="lang-en">Automation & DevOps</span><span class="lang-sw">Automatisering na DevOps</span><span class="lang-fr">Automation & DevOps</span><span class="lang-de">Automatisierung & DevOps</span><span class="lang-ja">自動化＆DevOps</span></h3>
+        <h3> <span class="lang-en">Automation & DevOps</span><span class="lang-sw">Automatisering na DevOps</span><span class="lang-fr">Automation & DevOps</span><span class="lang-de">Automatisierung & DevOps</span><span class="lang-ja">自動化＆DevOps</span></h3>
         <ul class="skill-list">
           <li>Python Scripting <span class="skill-level">96%</span></li>
           <li>Bash/PowerShell <span class="skill-level">92%</span></li>
@@ -3053,24 +3060,24 @@ body.light-mode .name-dark .name-char {
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-icon"><i class="fas fa-globe"></i></div>
-          <h3>Portfolio v4 · Tri-Theme</h3>
-          <p><span class="lang-en">Fully responsive portfolio with real-time theme switching, glassmorphism UI, built-in accessibility panel.</span><span class="lang-sw">Portfolio inayoitikia kikamilifu yenye ubadilishaji wa mandhari ya wakati halisi.</span><span class="lang-fr">Portfolio entièrement responsive avec changement de thème en temps réel.</span><span class="lang-de">Vollständig responsives Portfolio mit Echtzeit-Theme-Wechsel.</span><span class="lang-ja">リアルタイムテーマ切替、アクセシビリティパネル内蔵の完全レスポンシブポートフォリオ。</span></p>
-          <div class="tech-icons"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Chart.js</span></div>
-          <div class="project-links"><a href="#" class="project-link"><span class="lang-en">🔗 Live Demo</span><span class="lang-sw">🔗 Demo Moja kwa Moja</span><span class="lang-fr">🔗 Démo en Direct</span><span class="lang-de">🔗 Live-Demo</span><span class="lang-ja">🔗 ライブデモ</span></a><a href="#" class="project-link"><span class="lang-en">📦 GitHub</span><span class="lang-sw">📦 GitHub</span><span class="lang-fr">📦 GitHub</span><span class="lang-de">📦 GitHub</span><span class="lang-ja">📦 GitHub</span></a></div>
+          <h3>Ultrega71 - XMD WhatsApp Chat Bot</h3>
+          <p><span class="lang-en">Fully responsive whatsapp ot ideal for business profiles and personal automation featuring 170+ commands</span><span class="lang-sw">Portfolio inayoitikia kikamilifu yenye ubadilishaji wa mandhari ya wakati halisi.</span><span class="lang-fr">Portfolio entièrement responsive avec changement de thème en temps réel.</span><span class="lang-de">Vollständig responsives Portfolio mit Echtzeit-Theme-Wechsel.</span><span class="lang-ja">リアルタイムテーマ切替、アクセシビリティパネル内蔵の完全レスポンシブポートフォリオ。</span></p>
+          <div class="tech-icons"><span>JAVASCRIPT</span><span>NODEJS</span><span>KATABUMP</span><span>NPM</span></div>
+          <div class="project-links"><a href="#" class="project-link"><span class="lang-en"> Live Demo</span><span class="lang-sw"> Demo Moja kwa Moja</span><span class="lang-fr"> Démo en Direct</span><span class="lang-de"> Live-Demo</span><span class="lang-ja">🔗 ライブデモ</span></a><a href="#" class="project-link"><span class="lang-en">📦 GitHub</span><span class="lang-sw">📦 GitHub</span><span class="lang-fr">📦 GitHub</span><span class="lang-de">📦 GitHub</span><span class="lang-ja">📦 GitHub</span></a></div>
         </div>
         <div class="project-card">
           <div class="project-icon"><i class="fas fa-home"></i></div>
-          <h3>SmartHome Controller</h3>
-          <p><span class="lang-en">Cross-platform Android/iOS app for IoT home automation with real-time sensor monitoring.</span><span class="lang-sw">Programu ya Android/iOS ya mifumo mbalimbali kwa automatisering ya nyumbani ya IoT.</span><span class="lang-fr">Application multiplateforme Android/iOS pour l'automatisation domestique IoT.</span><span class="lang-de">Plattformübergreifende Android/iOS-App für IoT-Hausautomatisierung.</span><span class="lang-ja">リアルタイムセンサーモニタリングを備えたIoTホームオートメーション用アプリ。</span></p>
-          <div class="tech-icons"><span>React Native</span><span>MQTT</span><span>Firebase</span><span>ESP32</span></div>
-          <div class="project-links"><a href="#" class="project-link"><span class="lang-en">📱 Demo</span><span class="lang-sw">📱 Demo</span><span class="lang-fr">📱 Démo</span><span class="lang-de">📱 Demo</span><span class="lang-ja">📱 デモ</span></a><a href="#" class="project-link"><span class="lang-en">⚙️ Source</span><span class="lang-sw">⚙️ Chanzo</span><span class="lang-fr">⚙️ Source</span><span class="lang-de">⚙️ Quelle</span><span class="lang-ja">⚙️ ソース</span></a></div>
+          <h3>CENTURION® - Zer0 Tust Security Client</h3>
+          <p><span class="lang-en">A highly intelligent security  portal with several security layers + MFA ideal for embedded security systems</span><span class="lang-sw">Programu ya Android/iOS ya mifumo mbalimbali kwa automatisering ya nyumbani ya IoT.</span><span class="lang-fr">Application multiplateforme Android/iOS pour l'automatisation domestique IoT.</span><span class="lang-de">Plattformübergreifende Android/iOS-App für IoT-Hausautomatisierung.</span><span class="lang-ja">リアルタイムセンサーモニタリングを備えたIoTホームオートメーション用アプリ。</span></p>
+          <div class="tech-icons"><span>SHELL</span><span>CMake</span><span>Python</span><span>JavaScript</span></div>
+          <div class="project-links"><a href="#" class="project-link"><span class="lang-en"> Demo</span><span class="lang-sw"> Demo</span><span class="lang-fr"> Démo</span><span class="lang-de"> Demo</span><span class="lang-ja"> デモ</span></a><a href="#" class="project-link"><span class="lang-en">⚙️ Source</span><span class="lang-sw">⚙️ Chanzo</span><span class="lang-fr">⚙️ Source</span><span class="lang-de">⚙️ Quelle</span><span class="lang-ja">⚙️ ソース</span></a></div>
         </div>
         <div class="project-card">
           <div class="project-icon"><i class="fas fa-spider"></i></div>
-          <h3>Python Web Scraper Pro</h3>
-          <p><span class="lang-en">Advanced asynchronous web scraper with proxy rotation, JavaScript rendering, and SQLite storage.</span><span class="lang-sw">Scraper ya wavuti ya hali ya juu isiyolingana na mzunguko wa proksi.</span><span class="lang-fr">Scraper web asynchrone avancé avec rotation de proxy.</span><span class="lang-de">Fortschrittlicher asynchroner Web-Scraper mit Proxy-Rotation.</span><span class="lang-ja">プロキシローテーション、JavaScriptレンダリングを備えた高度な非同期ウェブスクレイパー。</span></p>
-          <div class="tech-icons"><span>Python</span><span>aiohttp</span><span>BeautifulSoup</span><span>Selenium</span><span>SQLite</span><span>Docker</span></div>
-          <div class="project-links"><a href="#" class="project-link"><span class="lang-en">🐍 PyPI</span><span class="lang-sw">🐍 PyPI</span><span class="lang-fr">🐍 PyPI</span><span class="lang-de">🐍 PyPI</span><span class="lang-ja">🐍 PyPI</span></a><a href="#" class="project-link"><span class="lang-en">📁 Repo</span><span class="lang-sw">📁 Hifadhi</span><span class="lang-fr">📁 Dépôt</span><span class="lang-de">📁 Repo</span><span class="lang-ja">📁 リポジトリ</span></a></div>
+          <h3>witnessMe - vtuer3d web-based client</h3>
+          <p><span class="lang-en">Advanced vtuber inspired by kalidookit for basic avatar mimic animation recommended for animators.</span><span class="lang-sw">Scraper ya wavuti ya hali ya juu isiyolingana na mzunguko wa proksi.</span><span class="lang-fr">Scraper web asynchrone avancé avec rotation de proxy.</span><span class="lang-de">Fortschrittlicher asynchroner Web-Scraper mit Proxy-Rotation.</span><span class="lang-ja">プロキシローテーション、JavaScriptレンダリングを備えた高度な非同期ウェブスクレイパー。</span></p>
+          <div class="tech-icons"><span>Blender</span><span>Vuejs</span><span>JavaScript</span><span>HTML</span><span>React</span><span>Docker</span></div>
+          <div class="project-links"><a href="#" class="project-link"><span class="lang-en"> PyPI</span><span class="lang-sw"> PyPI</span><span class="lang-fr"> PyPI</span><span class="lang-de"> PyPI</span><span class="lang-ja">PyPI</span></a><a href="#" class="project-link"><span class="lang-en">📁 Repo</span><span class="lang-sw">📁 Hifadhi</span><span class="lang-fr">📁 Dépôt</span><span class="lang-de">📁 Repo</span><span class="lang-ja">📁 リポジトリ</span></a></div>
         </div>
       </div>
     </div>
@@ -3078,23 +3085,23 @@ body.light-mode .name-dark .name-char {
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-icon"><i class="fas fa-robot"></i></div>
-          <h3>TaskForge Automator</h3>
-          <p><span class="lang-en">Python-based cross-platform automation suite handling file organization, email parsing, web scraping.</span><span class="lang-sw">Msururu wa automatisering wa mifumo mbalimbali unaotegemea Python.</span><span class="lang-fr">Suite d'automatisation multiplateforme basée sur Python.</span><span class="lang-de">Plattformübergreifende Python-basierte Automatisierungssuite.</span><span class="lang-ja">ファイル整理、メール解析を処理するPythonベースの自動化スイート。</span></p>
-          <div class="tech-icons"><span>Python</span><span>Selenium</span><span>BeautifulSoup</span><span>PyInstaller</span></div>
-          <div class="project-links"><a href="#" class="project-link"><span class="lang-en">🐍 PyPI</span><span class="lang-sw">🐍 PyPI</span><span class="lang-fr">🐍 PyPI</span><span class="lang-de">🐍 PyPI</span><span class="lang-ja">🐍 PyPI</span></a><a href="#" class="project-link"><span class="lang-en">📂 Source</span><span class="lang-sw">📂 Chanzo</span><span class="lang-fr">📂 Source</span><span class="lang-de">📂 Quelle</span><span class="lang-ja">📂 ソース</span></a></div>
+          <h3>GRAMPTIOUS™ - The Highly Intelligent Instagram Manipulator</h3>
+          <p><span class="lang-en">JavaScript based instagram account caretaker considering any audience manipulation actions done, operating as a web exttension</span><span class="lang-sw">Msururu wa automatisering wa mifumo mbalimbali unaotegemea Python.</span><span class="lang-fr">Suite d'automatisation multiplateforme basée sur Python.</span><span class="lang-de">Plattformübergreifende Python-basierte Automatisierungssuite.</span><span class="lang-ja">ファイル整理、メール解析を処理するPythonベースの自動化スイート。</span></p>
+          <div class="tech-icons"><span>JavScript</span><span>Chrome</span><span>Extensions</span><span>Instagram</span></div>
+          <div class="project-links"><a href="#" class="project-link"><span class="lang-en"> PyPI</span><span class="lang-sw">🐍 PyPI</span><span class="lang-fr">🐍 PyPI</span><span class="lang-de">🐍 PyPI</span><span class="lang-ja">🐍 PyPI</span></a><a href="#" class="project-link"><span class="lang-en">📂 Source</span><span class="lang-sw">📂 Chanzo</span><span class="lang-fr">📂 Source</span><span class="lang-de">📂 Quelle</span><span class="lang-ja">📂 ソース</span></a></div>
         </div>
         <div class="project-card">
           <div class="project-icon"><i class="fas fa-shield"></i></div>
-          <h3>CipherVault · AES-256</h3>
-          <p><span class="lang-en">Secure file encryption utility with intuitive GUI supporting batch encryption and secure key storage.</span><span class="lang-sw">Programu ya usimbaji fiche ya faili salama yenye GUI angavu.</span><span class="lang-fr">Utilitaire de chiffrement de fichiers sécurisé avec interface graphique intuitive.</span><span class="lang-de">Sicheres Dateiverschlüsselungsprogramm mit intuitiver GUI.</span><span class="lang-ja">バッチ暗号化をサポートする直感的なGUIを備えた安全なファイル暗号化ユーティリティ。</span></p>
-          <div class="tech-icons"><span>Python</span><span>PyCryptodome</span><span>PyQt5</span><span>AES-256</span></div>
+          <h3>Qats Qradle ™</h3>
+          <p><span class="lang-en">Basic hand simulation of neural networks - satisfactory sideQuest</span><span class="lang-sw">Programu ya usimbaji fiche ya faili salama yenye GUI angavu.</span><span class="lang-fr">Utilitaire de chiffrement de fichiers sécurisé avec interface graphique intuitive.</span><span class="lang-de">Sicheres Dateiverschlüsselungsprogramm mit intuitiver GUI.</span><span class="lang-ja">バッチ暗号化をサポートする直感的なGUIを備えた安全なファイル暗号化ユーティリティ。</span></p>
+          <div class="tech-icons"><span>Python</span><span>PyCryptodome</span><span>PyQt5</span><span>HTML</span></div>
           <div class="project-links"><a href="#" class="project-link"><span class="lang-en">🔐 Demo</span><span class="lang-sw">🔐 Demo</span><span class="lang-fr">🔐 Démo</span><span class="lang-de">🔐 Demo</span><span class="lang-ja">🔐 デモ</span></a><a href="#" class="project-link"><span class="lang-en">📎 Source</span><span class="lang-sw">📎 Chanzo</span><span class="lang-fr">📎 Source</span><span class="lang-de">📎 Quelle</span><span class="lang-ja">📎 ソース</span></a></div>
         </div>
         <div class="project-card">
           <div class="project-icon"><i class="fas fa-code-branch"></i></div>
-          <h3>Obfuscator Pro</h3>
-          <p><span class="lang-en">Advanced source code obfuscator for JavaScript, Python, and Java preserving execution logic.</span><span class="lang-sw">Kificha cha msimbo wa chanzo cha hali ya juu kwa JavaScript, Python, na Java.</span><span class="lang-fr">Obfuscateur de code source avancé pour JavaScript, Python et Java.</span><span class="lang-de">Fortschrittlicher Quellcode-Verschleierer für JavaScript, Python und Java.</span><span class="lang-ja">実行ロジックを保持するJavaScript、Python、Java向けの高度なソースコード難読化ツール。</span></p>
-          <div class="tech-icons"><span>Python</span><span>AST</span><span>JavaScript</span><span>CLI</span></div>
+          <h3>Study Prof</h3>
+          <p><span class="lang-en">A pyhon based web interface aiming students for seamless study flow.</span><span class="lang-sw">Kificha cha msimbo wa chanzo cha hali ya juu kwa JavaScript, Python, na Java.</span><span class="lang-fr">Obfuscateur de code source avancé pour JavaScript, Python et Java.</span><span class="lang-de">Fortschrittlicher Quellcode-Verschleierer für JavaScript, Python und Java.</span><span class="lang-ja">実行ロジックを保持するJavaScript、Python、Java向けの高度なソースコード難読化ツール。</span></p>
+          <div class="tech-icons"><span>Python</span><span>GEMINI</span><span>JavaScript</span><span>CLI</span></div>
           <div class="project-links"><a href="#" class="project-link"><span class="lang-en">🛠️ Tool</span><span class="lang-sw">🛠️ Zana</span><span class="lang-fr">🛠️ Outil</span><span class="lang-de">🛠️ Werkzeug</span><span class="lang-ja">🛠️ ツール</span></a><a href="#" class="project-link"><span class="lang-en">📦 GitHub</span><span class="lang-sw">📦 GitHub</span><span class="lang-fr">📦 GitHub</span><span class="lang-de">📦 GitHub</span><span class="lang-ja">📦 GitHub</span></a></div>
         </div>
       </div>
@@ -3108,10 +3115,10 @@ body.light-mode .name-dark .name-char {
       <div class="cv-preview">
         <div class="cv-header">
           <div>
-            <div class="cv-name">Aura Joshua Prince</div>
-            <div class="cv-title"><span class="lang-en">Software Engineering Student ✧ Automation & Cloud Enthusiast</span><span class="lang-sw">Mwanafunzi wa Uhandisi wa Programu ✧ Mpenzi wa Automatisering na Wingu</span><span class="lang-fr">Étudiant en Génie Logiciel ✧ Passionné d'Automation et Cloud</span><span class="lang-de">Student des Software-Engineerings ✧ Automatisierungs- und Cloud-Enthusiast</span><span class="lang-ja">ソフトウェアエンジニアリング学生 ✧ 自動化＆クラウド愛好家</span></div>
+            <div class="cv-name">Aura Joshua </div>
+            <div class="cv-title"><span class="lang-en">Software Engineer</span><span class="lang-sw">Mwanafunzi wa Uhandisi wa Programu ✧ Mpenzi wa Automatisering na Wingu</span><span class="lang-fr">Étudiant en Génie Logiciel ✧ Passionné d'Automation et Cloud</span><span class="lang-de">Student des Software-Engineerings ✧ Automatisierungs- und Cloud-Enthusiast</span><span class="lang-ja">ソフトウェアエンジニアリング学生 ✧ 自動化＆クラウド愛好家</span></div>
             <div class="cv-contact">
-              <div class="cv-contact-item"><i class="fas fa-map-marker-alt"></i> Ruiru, Kiambu</div>
+              <div class="cv-contact-item"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</div>
               <div class="cv-contact-item"><i class="fas fa-envelope"></i> joshuaura7822@gmail.com</div>
               <div class="cv-contact-item"><i class="fas fa-phone"></i> +254 119750041</div>
               <div class="cv-contact-item"><i class="fab fa-linkedin"></i> linkedin.com/in/aura-joshua-615660344</div>
@@ -3122,35 +3129,38 @@ body.light-mode .name-dark .name-char {
 
         <!-- PROFILE SUMMARY -->
         <div class="cv-section">
-          <h3><span class="lang-en">📋 Profile Summary</span><span class="lang-sw">📋 Muhtasari wa Wasifu</span><span class="lang-fr">📋 Résumé du Profil</span><span class="lang-de">📋 Profilzusammenfassung</span><span class="lang-ja">📋 プロフィール概要</span></h3>
+          <h3><span class="lang-en">CAREER OBJECTIVE</span><span class="lang-sw">📋 Muhtasari wa Wasifu</span><span class="lang-fr">📋 Résumé du Profil</span><span class="lang-de">📋 Profilzusammenfassung</span><span class="lang-ja">📋 プロフィール概要</span></h3>
           <div class="cv-item">
-            <p><span class="lang-en">Driven and innovative Software Engineering student (2nd Year) passionate about building intelligent systems, data-driven solutions, and user-centered applications. Skilled in both backend logic and frontend design, with a growing interest in cloud computing, AI integration, and automation. Known for strong problem-solving ability, attention to detail, and adaptability in fast-paced, collaborative environments. Eager to apply my technical skills and creativity as an intern at Microsoft Kenya, contributing to impactful technology that empowers every person and organization to achieve more.</span><span class="lang-sw">Mwanafunzi wa Uhandisi wa Programu (Mwaka wa 2) mwenye nguvu na ubunifu anayependa sana kuunda mifumo mahiri, suluhisho zinazoendeshwa na data, na programu zinazozingatia mtumiaji. Mwenye ujuzi katika mantiki ya backend na muundo wa frontend, na nia inayokua katika kompyuta ya wingu, ujumuishaji wa AI, na automatisering.</span><span class="lang-fr">Étudiant en Génie Logiciel (2e année) motivé et innovant, passionné par la création de systèmes intelligents, de solutions axées sur les données et d'applications centrées sur l'utilisateur. Compétent en logique backend et conception frontend, avec un intérêt croissant pour le cloud computing, l'intégration de l'IA et l'automatisation.</span><span class="lang-de">Engagierter und innovativer Student des Software-Engineerings (2. Jahr) mit Leidenschaft für intelligente Systeme, datengesteuerte Lösungen und benutzerzentrierte Anwendungen. Kompetent in Backend-Logik und Frontend-Design mit wachsendem Interesse an Cloud Computing, KI-Integration und Automatisierung.</span><span class="lang-ja">意欲的で革新的なソフトウェアエンジニアリング学生（2年）。インテリジェントシステム、データ駆動型ソリューション、ユーザー中心のアプリケーション構築に情熱を注ぐ。バックエンドロジックとフロントエンドデザインのスキルを持ち、クラウドコンピューティング、AI統合、自動化への関心が高まっている。</span></p>
+            <p><span class="lang-en">Junior Software Engineering professional with hands-on experience building full-stack, IoT-integrated, and blockchain-adjacent applications,
+seeking an entry-level Software Engineer role to apply strong skills in system design, secure application development, and DevOps practices to
+deliver reliable, scalable solutions in a collaborative engineering team..</span><span class="lang-sw">Mwanafunzi wa Uhandisi wa Programu (Mwaka wa 2) mwenye nguvu na ubunifu anayependa sana kuunda mifumo mahiri, suluhisho zinazoendeshwa na data, na programu zinazozingatia mtumiaji. Mwenye ujuzi katika mantiki ya backend na muundo wa frontend, na nia inayokua katika kompyuta ya wingu, ujumuishaji wa AI, na automatisering.</span><span class="lang-fr">Étudiant en Génie Logiciel (2e année) motivé et innovant, passionné par la création de systèmes intelligents, de solutions axées sur les données et d'applications centrées sur l'utilisateur. Compétent en logique backend et conception frontend, avec un intérêt croissant pour le cloud computing, l'intégration de l'IA et l'automatisation.</span><span class="lang-de">Engagierter und innovativer Student des Software-Engineerings (2. Jahr) mit Leidenschaft für intelligente Systeme, datengesteuerte Lösungen und benutzerzentrierte Anwendungen. Kompetent in Backend-Logik und Frontend-Design mit wachsendem Interesse an Cloud Computing, KI-Integration und Automatisierung.</span><span class="lang-ja">意欲的で革新的なソフトウェアエンジニアリング学生（2年）。インテリジェントシステム、データ駆動型ソリューション、ユーザー中心のアプリケーション構築に情熱を注ぐ。バックエンドロジックとフロントエンドデザインのスキルを持ち、クラウドコンピューティング、AI統合、自動化への関心が高まっている。</span></p>
           </div>
         </div>
 
         <!-- TECHNICAL SKILLS -->
         <div class="cv-section">
-          <h3><span class="lang-en"> *Technical Skills:</span><span class="lang-sw">*Ujuzi wa Kiufundi:</span><span class="lang-fr">*Compétences Techniques:</span><span class="lang-de">*Technische Fähigkeiten:</span><span class="lang-ja">*技術スキル:</span></h3>
+          <h3><span class="lang-en"> *PROFESSIONAL SKILLS:</span><span class="lang-sw">*Ujuzi wa Kiufundi:</span><span class="lang-fr">*Compétences Techniques:</span><span class="lang-de">*Technische Fähigkeiten:</span><span class="lang-ja">*技術スキル:</span></h3>
           <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
             <div>
-              <h4 style="color: var(--accent-gold);">Programming</h4>
-              <p>Python, Java, C++, JavaScript, SQL</p>
+              <h4 style="color: var(--accent-gold);">LANGUAGES</h4>
+              <p>Python, Java, C++, JavaScript, SQL, Kotlin, c#, PHP</p>
             </div>
             <div>
               <h4 style="color: var(--accent-gold);"><span class="lang-en">Frameworks & Tools</span><span class="lang-sw">Mifumo na Zana</span><span class="lang-fr">Frameworks & Outils</span><span class="lang-de">Frameworks & Werkzeuge</span><span class="lang-ja">フレームワーク＆ツール</span></h4>
-              <p>Flask, Git/GitHub, VS Code, Figma, MySQL</p>
+              <p> Node.js, React, Flask, Docker, Git/GitHub, REST APIs, Kubernetes</p>
             </div>
             <div>
-              <h4 style="color: var(--accent-gold);"><span class="lang-en">Web Technologies</span><span class="lang-sw">Teknolojia za Wavuti</span><span class="lang-fr">Technologies Web</span><span class="lang-de">Web-Technologien</span><span class="lang-ja">ウェブ技術</span></h4>
-              <p>HTML5, CSS3, REST APIs, Bootstrap</p>
+              <h4 style="color: var(--accent-gold);"><span class="lang-en">Database & Cloud</span><span class="lang-sw">Teknolojia za Wavuti</span><span class="lang-fr">Technologies Web</span><span class="lang-de">Web-Technologien</span><span class="lang-ja">ウェブ技術</span></h4>
+              <p>MySQL, PostgreSQL, MongoDB, Cloud deployment (Render, Vercel, Netlify)</p>
             </div>
             <div>
-              <h4 style="color: var(--accent-gold);"><span class="lang-en">Data & Cloud</span><span class="lang-sw">Data na Wingu</span><span class="lang-fr">Données & Cloud</span><span class="lang-de">Daten & Cloud</span><span class="lang-ja">データ＆クラウド</span></h4>
-              <p>Data Structures, Database Management, Azure Fundamentals (Learning), Data Entry & Cleaning</p>
+              <h4 style="color: var(--accent-gold);"><span class="lang-en">Testing & QA</span><span class="lang-sw">Data na Wingu</span><span class="lang-fr">Données & Cloud</span><span class="lang-de">Daten & Cloud</span><span class="lang-ja">データ＆クラウド</span></h4>
+              <p>Selenium, Postman, MySQL Workbench,Jira, Trello, Confluence</p>
             </div>
             <div>
-              <h4 style="color: var(--accent-gold);"><span class="lang-en">Other Skills</span><span class="lang-sw">Ujuzi Mwingine</span><span class="lang-fr">Autres Compétences</span><span class="lang-de">Andere Fähigkeiten</span><span class="lang-ja">その他のスキル</span></h4>
-              <p>Debugging, UI/UX Optimization, Algorithm Design, Team Collaboration, Agile Basics</p>
+              <h4 style="color: var(--accent-gold);"><span class="lang-en">CORE COMPETENCIES</span><span class="lang-sw">Ujuzi Mwingine</span><span class="lang-fr">Autres Compétences</span><span class="lang-de">Andere Fähigkeiten</span><span class="lang-ja">その他のスキル</span></h4>
+              <p>Software Design Patterns, RBAC & Zero-Trust Security, Object-Oriented Design, Software Testing, Agile Collaboration,
+Technical Documentation</p>
             </div>
           </div>
         </div>
@@ -3161,7 +3171,7 @@ body.light-mode .name-dark .name-char {
           <div class="cv-item">
             <h4><span class="lang-en">Bachelor of Science in Software Engineering</span><span class="lang-sw">Shahada ya Sayansi katika Uhandisi wa Programu</span><span class="lang-fr">Licence en Génie Logiciel</span><span class="lang-de">Bachelor of Science in Software-Engineering</span><span class="lang-ja">ソフトウェアエンジニアリング学士</span></h4>
             <div class="cv-date">2024 – 2027 (Expected)</div>
-            <p>Zetech University, Kiambu</p>
+            <p>Zetech University, Ruiru</p>
             <p style="margin-top: 10px;"><strong style="color: var(--accent-gold);"><span class="lang-en">Relevant Coursework:</span><span class="lang-sw">Kozi Muhimu:</span><span class="lang-fr">Cours Pertinents:</span><span class="lang-de">Relevante Kurse:</span><span class="lang-ja">関連コースワーク:</span></strong></p>
             <p>✧ <span class="lang-en">Software Design & Architecture</span><span class="lang-sw">Muundo wa Programu na Usanifu</span><span class="lang-fr">Conception et Architecture Logicielle</span><span class="lang-de">Softwaredesign und -architektur</span><span class="lang-ja">ソフトウェア設計＆アーキテクチャ</span><br>
                ✧ <span class="lang-en">Database Systems</span><span class="lang-sw">Mifumo ya Hifadhidata</span><span class="lang-fr">Systèmes de Bases de Données</span><span class="lang-de">Datenbanksysteme</span><span class="lang-ja">データベースシステム</span><br>
@@ -3172,39 +3182,51 @@ body.light-mode .name-dark .name-char {
 
         <!-- PROJECT EXPERIENCE -->
         <div class="cv-section">
-          <h3><span class="lang-en"> Project Experience:</span><span class="lang-sw"> Uzoefu wa Mradi:</span><span class="lang-fr"> Expérience de Projet:</span><span class="lang-de"> Projekterfahrung:</span><span class="lang-ja"> プロジェクト経験:</span></h3>
+          <h3><span class="lang-en"> EXPERIENCE:</span><span class="lang-sw"> Uzoefu wa Mradi:</span><span class="lang-fr"> Expérience de Projet:</span><span class="lang-de"> Projekterfahrung:</span><span class="lang-ja"> プロジェクト経験:</span></h3>
           <div class="cv-item">
-            <h4>Uncomplicated Code Obfuscator</h4>
-            <div class="cv-date">Java ✧ GitHub</div>
-            <p><span class="lang-en">Developed a code obfuscation tool for Java applications to protect intellectual property and prevent reverse engineering.</span><span class="lang-sw">Nilitengeneza zana ya kuficha msimbo kwa programu za Java kulinda mali miliki na kuzuia uhandisi wa nyuma.</span><span class="lang-fr">Développé un outil d'obfuscation de code pour les applications Java pour protéger la propriété intellectuelle.</span><span class="lang-de">Entwickelte ein Code-Verschleierungswerkzeug für Java-Anwendungen zum Schutz geistigen Eigentums.</span><span class="lang-ja">知的財産を保護し、リバースエンジニアリングを防ぐためのJavaアプリケーション向けコード難読化ツールを開発。</span></p>
+            <h4>Independent Software Developer - Self-Directed / GitHub Projects
+ </h4>
+            <div class="cv-date"> GitHub</div>
+            <p><span class="lang-en">Designed, developed, and deployed multiple full-stack and systems-level projects (security/IoT, e-commerce, ed-tech), independently
+managed via Git version control on GitHub.
+Applied software engineering design patterns and OOP principles to build maintainable, modular codebases across C++, Python, and
+JavaScript/TypeScript stacks.
+Managed the end-to-end project lifecycle: requirements, design, implementation, testing, and deployment (Docker, Render, Vercel,
+Netlify)..</span><span class="lang-sw">Nilitengeneza zana ya kuficha msimbo kwa programu za Java kulinda mali miliki na kuzuia uhandisi wa nyuma.</span><span class="lang-fr">Développé un outil d'obfuscation de code pour les applications Java pour protéger la propriété intellectuelle.</span><span class="lang-de">Entwickelte ein Code-Verschleierungswerkzeug für Java-Anwendungen zum Schutz geistigen Eigentums.</span><span class="lang-ja">知的財産を保護し、リバースエンジニアリングを防ぐためのJavaアプリケーション向けコード難読化ツールを開発。</span></p>
           </div>
           <div class="cv-item">
-            <h4>Python Data Visualization System</h4>
+            <h4>Freelance Software Developer - Client Projects
+ </h4>
             <div class="cv-date"><span class="lang-en">Personal Project</span><span class="lang-sw">Mradi wa Kibinafsi</span><span class="lang-fr">Projet Personnel</span><span class="lang-de">Persönliches Projekt</span><span class="lang-ja">個人プロジェクト</span></div>
-            <p><span class="lang-en">Built an interactive data visualization dashboard using Python and Flask to analyze and present complex datasets.</span><span class="lang-sw">Niliunda dashibodi shirikishi ya taswira ya data kwa kutumia Python na Flask kuchambua na kuwasilisha seti tata za data.</span><span class="lang-fr">Construit un tableau de bord interactif de visualisation de données avec Python et Flask.</span><span class="lang-de">Erstellte ein interaktives Datenvisualisierungs-Dashboard mit Python und Flask.</span><span class="lang-ja">PythonとFlaskを使用したインタラクティブなデータ可視化ダッシュボードを構築し、複雑なデータセットを分析・提示。</span></p>
+            <p><span class="lang-en">Developed a mobile application for a hospital client to support patient -facing workflows, translating client requirements into a functional,
+tested mobile solution.
+Built a real estate listings website for a client, deploying property search, listing management, and a responsive front-end interface.
+Communicated with clients to gather requirements, provide progress updates,deliver ing solutions that met business needs..</span><span class="lang-sw">Niliunda dashibodi shirikishi ya taswira ya data kwa kutumia Python na Flask kuchambua na kuwasilisha seti tata za data.</span><span class="lang-fr">Construit un tableau de bord interactif de visualisation de données avec Python et Flask.</span><span class="lang-de">Erstellte ein interaktives Datenvisualisierungs-Dashboard mit Python und Flask.</span><span class="lang-ja">PythonとFlaskを使用したインタラクティブなデータ可視化ダッシュボードを構築し、複雑なデータセットを分析・提示。</span></p>
           </div>
-          <div class="cv-item">
-            <h4>WhatsApp Bot Automator</h4>
-            <div class="cv-date">JavaScript</div>
-            <p><span class="lang-en">Created an automated WhatsApp bot for message scheduling, auto-replies, and task automation using JavaScript.</span><span class="lang-sw">Niliunda bot ya WhatsApp ya kiotomatiki kwa kuratibu ujumbe, majibu ya kiotomatiki, na automatisering ya kazi kwa kutumia JavaScript.</span><span class="lang-fr">Créé un bot WhatsApp automatisé pour la planification des messages, les réponses automatiques et l'automatisation des tâches.</span><span class="lang-de">Erstellte einen automatisierten WhatsApp-Bot für Nachrichtenplanung, automatische Antworten und Aufgabenautomatisierung.</span><span class="lang-ja">メッセージスケジューリング、自動返信、タスク自動化のためのWhatsAppボットをJavaScriptで作成。</span></p>
-          </div>
-        </div>
-
+          
         <!-- INTERNSHIP & VOLUNTEER EXPERIENCE -->
         <div class="cv-section">
-          <h3><span class="lang-en"> Internship & Volunteer Experience:</span><span class="lang-sw"> Uzoefu wa Mafunzo na Kujitolea:</span><span class="lang-fr"> Expérience de Stage et Bénévolat:</span><span class="lang-de"> Praktikums- und Ehrenamtserfahrung:</span><span class="lang-ja"> インターンシップ＆ボランティア経験:</span></h3>
+          <h3><span class="lang-en"> PROJECTS</span><span class="lang-sw"> Uzoefu wa Mafunzo na Kujitolea:</span><span class="lang-fr"> Expérience de Stage et Bénévolat:</span><span class="lang-de"> Praktikums- und Ehrenamtserfahrung:</span><span class="lang-ja"> インターンシップ＆ボランティア経験:</span></h3>
           <div class="cv-item">
-            <h4><span class="lang-en">Data Entry & IT Assistant ✧ Freelance</span><span class="lang-sw">Ingizo la Data na Msaidizi wa IT ✧ Kujitegemea</span><span class="lang-fr">Saisie de Données et Assistant IT ✧ Freelance</span><span class="lang-de">Dateneingabe & IT-Assistent ✧ Freiberuflich</span><span class="lang-ja">データ入力＆ITアシスタント ✧ フリーランス</span></h4>
-            <div class="cv-date">2024 – Present</div>
-            <p><span class="lang-en">• Supported database cleanup, data validation, and report generation for small businesses.<br>• Wrote simple automation scripts in Python to format and migrate records.<br>• Ensured data confidentiality and integrity through secure version control.</span><span class="lang-sw">• Nilisaidia usafishaji wa hifadhidata, uthibitishaji wa data, na utengenezaji wa ripoti kwa biashara ndogo.<br>• Niliandika hati rahisi za automatisering kwa Python kuformat na kuhamisha rekodi.<br>• Nilihaki usiri na uadilifu wa data kupitia udhibiti salama wa toleo.</span><span class="lang-fr">• Assistance au nettoyage de bases de données, validation des données et génération de rapports.<br>• Écriture de scripts d'automatisation simples en Python.<br>• Garantie de la confidentialité et de l'intégrité des données.</span><span class="lang-de">• Unterstützung bei Datenbankbereinigung, Datenvalidierung und Berichterstellung.<br>• Einfache Automatisierungsskripte in Python.<br>• Sicherstellung der Datenvertraulichkeit und -integrität.</span><span class="lang-ja">• 中小企業向けのデータベースクリーンアップ、データ検証、レポート作成を支援。<br>• Pythonでシンプルな自動化スクリプトを作成し、レコードのフォーマットと移行を実施。<br>• 安全なバージョン管理を通じてデータの機密性と整合性を確保。</span></p>
+            <h4><span class="lang-en">Centurion - Zero-Trust Security System
+ </span><span class="lang-sw">Ingizo la Data na Msaidizi wa IT ✧ Kujitegemea</span><span class="lang-fr">Saisie de Données et Assistant IT ✧ Freelance</span><span class="lang-de">Dateneingabe & IT-Assistent ✧ Freiberuflich</span><span class="lang-ja">データ入力＆ITアシスタント ✧ フリーランス</span></h4>
+            <div class="cv-date">Mar 2025- Jun 2025</div>
+            <p><span class="lang-en">• Designed and built an intelligent intrusion-detection and role-based access control (RBAC) platform for physical security points (door locks, safe
+vaults, security gates), featuring a central admin control panel with delegated sub-admin privileges and automated intrusion response (image
+capture + email alerts to admins).
+Impact: Strengthened skills in RBAC/security architecture, embedded-adjacent backend design, and containerized multi-service deployment (Docker Compose).<br>View Repository →</span><span class="lang-sw">• Nilisaidia usafishaji wa hifadhidata, uthibitishaji wa data, na utengenezaji wa ripoti kwa biashara ndogo.<br>• Niliandika hati rahisi za automatisering kwa Python kuformat na kuhamisha rekodi.<br>• Nilihaki usiri na uadilifu wa data kupitia udhibiti salama wa toleo.</span><span class="lang-fr">• Assistance au nettoyage de bases de données, validation des données et génération de rapports.<br>• Écriture de scripts d'automatisation simples en Python.<br>• Garantie de la confidentialité et de l'intégrité des données.</span><span class="lang-de">• Unterstützung bei Datenbankbereinigung, Datenvalidierung und Berichterstellung.<br>• Einfache Automatisierungsskripte in Python.<br>• Sicherstellung der Datenvertraulichkeit und -integrität.</span><span class="lang-ja">• 中小企業向けのデータベースクリーンアップ、データ検証、レポート作成を支援。<br>• Pythonでシンプルな自動化スクリプトを作成し、レコードのフォーマットと移行を実施。<br>• 安全なバージョン管理を通じてデータの機密性と整合性を確保。</span></p>
           </div>
         </div>
 
         <!-- INTERESTS -->
         <div class="cv-section">
-          <h3><span class="lang-en"> -Interests</span><span class="lang-sw">-Mambo Yanayonivutia</span><span class="lang-fr">-Centres d'Intérêt</span><span class="lang-de">-Interessen</span><span class="lang-ja">-興味分野</span></h3>
+          <h3><span class="lang-en"> E-Commerxe - Full-Stack E-Commerce Web Platform
+ </span><span class="lang-sw">-Mambo Yanayonivutia</span><span class="lang-fr">-Centres d'Intérêt</span><span class="lang-de">-Interessen</span><span class="lang-ja">-興味分野</span></h3>
           <div class="cv-item">
-            <p>✧ <span class="lang-en">Cloud Development & AI Automation</span><span class="lang-sw">Ukuzaji wa Wingu na Automatisering ya AI</span><span class="lang-fr">Développement Cloud et Automation IA</span><span class="lang-de">Cloud-Entwicklung & KI-Automatisierung</span><span class="lang-ja">クラウド開発＆AI自動化</span><br>
+            <p>✧ <span class="lang-en">Built a lightweight e-commerce platform covering product catalog, backend service logic, and storefront UI as the foundation for a scalable
+retail application.
+Impact: Improved full-stack architecture, API design, and TypeScript proficiency for production-style web applications.
+View Repository →</span><span class="lang-sw">Ukuzaji wa Wingu na Automatisering ya AI</span><span class="lang-fr">Développement Cloud et Automation IA</span><span class="lang-de">Cloud-Entwicklung & KI-Automatisierung</span><span class="lang-ja">クラウド開発＆AI自動化</span><br>
                ✧ <span class="lang-en">Cybersecurity & Ethical Hacking</span><span class="lang-sw">Usalama wa Mtandao na Udukuzi wa Kimaadili</span><span class="lang-fr">Cybersécurité et Hacking Éthique</span><span class="lang-de">Cybersicherheit & Ethisches Hacking</span><span class="lang-ja">サイバーセキュリティ＆倫理的ハッキング</span><br>
                ✧ <span class="lang-en">Open-Source Collaboration</span><span class="lang-sw">Ushirikiano wa Chanzo Huria</span><span class="lang-fr">Collaboration Open-Source</span><span class="lang-de">Open-Source-Zusammenarbeit</span><span class="lang-ja">オープンソースコラボレーション</span><br>
                ✧ <span class="lang-en">Tech Blogging & UI Design</span><span class="lang-sw">Kublogi za Teknolojia na Muundo wa UI</span><span class="lang-fr">Blogging Tech et Conception UI</span><span class="lang-de">Tech-Blogging & UI-Design</span><span class="lang-ja">テックブログ＆UIデザイン</span></p>
@@ -3213,9 +3235,13 @@ body.light-mode .name-dark .name-char {
 
         <!-- REFERENCES -->
         <div class="cv-section">
-          <h3><span class="lang-en">📞 References</span><span class="lang-sw">📞 Marejeleo</span><span class="lang-fr">📞 Références</span><span class="lang-de">📞 Referenzen</span><span class="lang-ja">📞 参考人</span></h3>
+          <h3><span class="lang-en">StudyProf -Digital AI Professor Platform
+ </span><span class="lang-sw">📞 Marejeleo</span><span class="lang-fr">📞 Références</span><span class="lang-de">📞 Referenzen</span><span class="lang-ja">📞 参考人</span></h3>
           <div class="cv-item">
-            <p><span class="lang-en">Available upon request.</span><span class="lang-sw">Inapatikana kwa ombi.</span><span class="lang-fr">Disponibles sur demande.</span><span class="lang-de">Auf Anfrage verfügbar.</span><span class="lang-ja">リクエストに応じて提供可能。</span></p>
+            <p><span class="lang-en">Developed and deployed a web application that delivers digital lecture content to students, including routing, controllers, a nd a public-facing
+interface, shipped live to production.
+Impact: Gained experience in server-side architecture (MVC), deployment pipelines, and taking a project from code to a live, publicly accessible app.
+View Repository →.</span><span class="lang-sw">Inapatikana kwa ombi.</span><span class="lang-fr">Disponibles sur demande.</span><span class="lang-de">Auf Anfrage verfügbar.</span><span class="lang-ja">リクエストに応じて提供可能。</span></p>
           </div>
         </div>
       </div>
@@ -3240,7 +3266,7 @@ body.light-mode .name-dark .name-char {
         <h3><span class="lang-en">Contribution Overview</span><span class="lang-sw">Muhtasari wa Michango</span><span class="lang-fr">Aperçu des Contributions</span><span class="lang-de">Beitragsübersicht</span><span class="lang-ja">貢献概要</span></h3>
         <p><span class="lang-en">Active GitHub user since 2024. Focus on automation, developer tooling, and accessibility.</span><span class="lang-sw">Mtumiaji hai wa GitHub tangu 2024. Lengo katika automatisering, zana za wasanidi programu, na ufikivu.</span><span class="lang-fr">Utilisateur GitHub actif depuis 2024. Axé sur l'automation, les outils pour développeurs et l'accessibilité.</span><span class="lang-de">Aktiver GitHub-Nutzer seit 2024. Schwerpunkt auf Automatisierung, Entwicklerwerkzeugen und Barrierefreiheit.</span><span class="lang-ja">2024年からアクティブなGitHubユーザー。自動化、開発者ツール、アクセシビリティに注力。</span></p>
         <ul>
-          <li><strong><span class="lang-en">Total Commits:</span><span class="lang-sw">Jumla ya Commits:</span><span class="lang-fr">Total des Commits:</span><span class="lang-de">Commits insgesamt:</span><span class="lang-ja">総コミット数:</span></strong> 300+</li>
+          <li><strong><span class="lang-en">Total Commits:</span><span class="lang-sw">Jumla ya Commits:</span><span class="lang-fr">Total des Commits:</span><span class="lang-de">Commits insgesamt:</span><span class="lang-ja">総コミット数:</span></strong> 400+</li>
           <li><strong><span class="lang-en">Repositories:</span><span class="lang-sw">Hifadhi:</span><span class="lang-fr">Dépôts:</span><span class="lang-de">Repositories:</span><span class="lang-ja">リポジトリ:</span></strong> 22</li>
           <li><strong><span class="lang-en">Pull Requests:</span><span class="lang-sw">Maombi ya Kuvuta:</span><span class="lang-fr">Pull Requests:</span><span class="lang-de">Pull-Anfragen:</span><span class="lang-ja">プルリクエスト:</span></strong> 67 merged</li>
           <li><strong><span class="lang-en">Stars Earned:</span><span class="lang-sw">Nyota Zilizopatikana:</span><span class="lang-fr">Étoiles Gagnées:</span><span class="lang-de">Erhaltene Sterne:</span><span class="lang-ja">獲得スター:</span></strong> 2</li>
@@ -3264,7 +3290,7 @@ body.light-mode .name-dark .name-char {
       </div>
       <div class="society-item">
         <div class="society-logo"><img src="https://raw.githubusercontent.com/aura7822/web1/main/pic3.png" alt="Kaggle"></div>
-        <div class="society-name">Kaggle.</div>
+        <div class="society-name">Aspect™</div>
       </div>
     </div>
   </section>
